@@ -2,1752 +2,1581 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Portfolio of Hari Satya Sai Puvvala - Java Developer">
-
+    <meta name="description"
+        content="Portfolio of Hari Satya Sai Puvvala - Full Stack Java Developer skilled in Core Java, Spring Boot, MySQL, REST APIs, and Modern Web Applications.">
     <meta name="author" content="Hari Satya Sai Puvvala">
-
+    <meta name="theme-color" content="#070b17">
     <title>Hari Satya Sai Puvvala | Full Stack Java Developer</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         INTRO LOADING SCREEN (HARI-Developer LIQUID FILL)
+    ====================================================== -->
+    <div id="intro-loader" class="intro-loader" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" aria-label="Loading portfolio">
+        <div class="loader-center-content">
+            <!-- SVG LIQUID TEXT CONTAINER -->
+            <div class="loader-text-wrapper">
+                <svg class="loader-svg" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <defs>
+                        <!-- BACK WAVE (DARKER TRANSLUCENT ORANGE CREST) -->
+                        <clipPath id="back-wave-clip">
+                            <path id="back-wave-path" d="M 0 220 L 1000 220 L 1000 220 L 0 220 Z" />
+                        </clipPath>
+                        <!-- FRONT WAVE (MAIN VIBRANT RED-ORANGE) -->
+                        <clipPath id="front-wave-clip">
+                            <path id="front-wave-path" d="M 0 220 L 1000 220 L 1000 220 L 0 220 Z" />
+                        </clipPath>
+                    </defs>
+
+                    <!-- BASE DARK-GRAY TEXT (UNFILLED STATE) -->
+                    <text x="500" y="150" text-anchor="middle" class="svg-text base-text">HARI-Developer</text>
+
+                    <!-- BACK WAVE CREST LAYER (DARKER TRANSLUCENT ORANGE) -->
+                    <g clip-path="url(#back-wave-clip)">
+                        <text x="500" y="150" text-anchor="middle" class="svg-text back-wave-text">HARI-Developer</text>
+                    </g>
+
+                    <!-- FRONT WAVE MAIN FILL LAYER (VIBRANT RED-ORANGE) -->
+                    <g clip-path="url(#front-wave-clip)">
+                        <text x="500" y="150" text-anchor="middle"
+                            class="svg-text front-wave-text">HARI-Developer</text>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- GLOWING ORANGE PERCENTAGE STATUS -->
+            <div class="loader-status">
+                <span class="loader-label">loading...</span>
+                <span id="loader-percent" class="loader-percent">0 %</span>
+            </div>
+        </div>
+    </div>
 
     <!-- =====================================================
          HEADER / NAVIGATION
     ====================================================== -->
-
-    <!-- =========================
-     NAVBAR
-========================== -->
-    <!-- =========================
-     NAVBAR
-========================== -->
-
     <header class="site-header">
-
         <nav class="navbar">
-
             <div class="nav-container">
 
-                <!-- LOGO -->
-                <a href="#profile" class="nav-logo">
-
+                <!-- BRAND LOGO -->
+                <a href="#profile" class="nav-logo" aria-label="Go to Home">
                     <span class="logo-box">HS</span>
-
                     <span class="logo-text">
                         HARI
                         <small>JAVA DEVELOPER</small>
                     </span>
-
                 </a>
 
-                <!-- NAVIGATION -->
-                <div class="nav-links">
-
+                <!-- DESKTOP NAV -->
+                <div class="nav-links" id="navLinks">
                     <a href="#profile" class="nav-link active">Home</a>
-
-                    <a href="#summary" class="nav-link">Summary</a>
-
+                    <a href="#summary" class="nav-link">About</a>
                     <a href="#education" class="nav-link">Education</a>
-
                     <a href="#experience" class="nav-link">Experience</a>
-
                     <a href="#projects" class="nav-link">Projects</a>
-
                     <a href="#skills" class="nav-link">Skills</a>
-
+                    <a href="#achievements" class="nav-link">Honors</a>
                     <a href="#languages" class="nav-link">Languages</a>
-
+                    <a href="#faqs" class="nav-link">FAQs</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="assets/Hari_Java_Resume_compressed.pdf" class="nav-link nav-drawer-resume"
+                        download="Hari_Java_Resume_compressed.pdf">Download Resume ↓</a>
                 </div>
 
-                <!-- RIGHT SIDE -->
+                <!-- RIGHT SIDE ACTIONS -->
                 <div class="nav-right">
-
-                    <div class="nav-status">
+                    <div class="nav-status" title="Open to Relocation across India">
                         <span class="status-dot"></span>
-                        <span>OPEN TO OPPORTUNITIES</span>
+                        <span>OPEN TO RELOCATION</span>
                     </div>
 
-                    <a href="/assets/Hari_Java_Resume_compressed.pdf" class="nav-resume" download>
+                    <a href="assets/Hari_Java_Resume_compressed.pdf" class="nav-resume"
+                        download="Hari_Java_Resume_compressed.pdf" aria-label="Download Hari Resume">
                         Resume
-                        <span>↓</span>
+                        <span class="btn-arrow">↓</span>
                     </a>
 
+                    <!-- MOBILE HAMBURGER BUTTON -->
+                    <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-label="Toggle navigation menu"
+                        aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
 
-                <!-- MOBILE BUTTON -->
-                <button class="nav-menu-btn" type="button" aria-label="Open navigation menu">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </button>
-
             </div>
-
         </nav>
-
     </header>
-
-
 
     <main>
 
-
         <!-- =====================================================
-             1. HERO / PROFILE
+             1. HERO SECTION (INTERACTIVE PARTICLE CONSTELLATION)
         ====================================================== -->
-        <!-- =========================
-     1. HERO
-========================== -->
-
-        <!-- =========================
-     1. HERO / PROFILE
-========================== -->
-
         <section id="profile" class="hero">
+            <!-- BACKGROUND CANVAS -->
+            <canvas id="hero-particles" class="hero-canvas" aria-hidden="true"></canvas>
 
-            <div class="hero-background">
-
-                <!-- Tech Grid -->
-                <div class="tech-grid"></div>
-
-            </div>
-
+            <div class="hero-glow-layer" aria-hidden="true"></div>
 
             <div class="container hero-content">
 
-
-                <!-- =========================
-             LEFT SIDE
-        ========================== -->
-
+                <!-- LEFT HERO TEXT -->
                 <div class="hero-text">
+                    <div class="hero-badge reveal">
+                        <span class="badge-ping"></span>
+                        📍 Hyderabad • Open to Relocation
+                    </div>
 
-                    <p class="hero-small-text">
+                    <p class="hero-greeting reveal">
                         HELLO, I'M
                     </p>
 
-
-                    <h1>
+                    <h1 class="hero-title reveal">
                         Hari Satya Sai
-                        <span>Puvvala</span>
+                        <span class="title-highlight">Puvvala</span>
                     </h1>
 
-
-                    <h2>
+                    <h2 class="hero-subtitle reveal">
                         Full Stack Java Developer
                     </h2>
 
-
-                    <p class="hero-description">
-                        Motivated Computer Science graduate with a strong
-                        foundation in Core Java, OOPs, Collections,
-                        Exception Handling, SQL, and problem solving.
-                        Interested in Java-based application development,
-                        backend development, debugging, testing, and
-                        continuous learning.
+                    <p class="hero-description reveal">
+                        Computer Science and Engineering graduate with a foundation in Java, software development, web
+                        technologies, and database management. Skilled in Core Java, OOP, SQL, MySQL, HTML, CSS,
+                        JavaScript, React.js, and Spring Boot. Eager to build responsive web applications, develop
+                        software solutions, solve real-world problems, and grow as a versatile software developer.
                     </p>
 
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-buttons reveal">
 
-                    <!-- =========================
-                 HERO BUTTONS
-            ========================== -->
+                        <!-- SIGNATURE INTERACTIVE HIRE ME BUTTON (REFERENCE DESIGN) -->
+                        <div class="hire-me-wrapper">
+                            <div class="hire-me-interactive" role="button" tabindex="0"
+                                aria-label="Hire Me - Open Contact Modal" title="Click to Open Contact Details">
+                                <canvas width="240" height="76"></canvas>
+                            </div>
+                        </div>
 
-                    <div class="hero-buttons">
-
-
-                        <!-- GitHub -->
-
-                        <a href="https://github.com/Hari-CodeTech" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-primary">
-
-                            GitHub
-
-                            <span>↗</span>
-
-                        </a>
-
-
-                        <!-- LinkedIn -->
-
-                        <a href="https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/" target="_blank"
-                            rel="noopener noreferrer" class="btn btn-secondary">
-
-                            LinkedIn
-
-                            <span>↗</span>
-
-                        </a>
-
-
-                        <!-- View Projects -->
-
-                        <a href="#projects" class="btn btn-outline">
-
-                            View Projects
-
+                        <!-- Explore Projects -->
+                        <a href="#projects" class="btn btn-primary">
+                            Explore Projects
                             <span>↓</span>
-
                         </a>
-
 
                         <!-- Download Resume -->
-
-                        <a href="assets/Hari_Resume_JavaA.pdf" download class="btn btn-resume">
-
-                            Download Resume
-
+                        <a href="assets/Hari_Java_Resume_compressed.pdf" download="Hari_Java_Resume_compressed.pdf"
+                            class="btn btn-outline">
+                            Resume
                             <span>↓</span>
-
                         </a>
 
-
-                        <!-- Email -->
-
-                        <a href="mailto:haripuvvala7924@gmail.com" class="btn btn-email">
-
-                            Email Me
-
-                            <span>✉</span>
-
+                        <!-- GitHub -->
+                        <a href="https://github.com/Hari-CodeTech" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-icon" title="Visit GitHub Profile">
+                            <span class="btn-icon-symbol">⌥</span>
+                            GitHub
+                            <span>↗</span>
                         </a>
 
-
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-icon" title="Visit LinkedIn Profile">
+                            <span class="btn-icon-symbol">in</span>
+                            LinkedIn
+                            <span>↗</span>
+                        </a>
                     </div>
 
-
-                    <!-- =========================
-                 HERO STATS
-            ========================== -->
-
-                    <div class="hero-meta">
-
-
+                    <!-- HERO KEY METRICS -->
+                    <div class="hero-meta reveal">
                         <div class="meta-item">
-
                             <strong>Java</strong>
-
-                            <span>
-                                DEVELOPMENT
-                            </span>
-
+                            <span>DEVELOPMENT</span>
                         </div>
-
 
                         <div class="meta-divider"></div>
 
-
                         <div class="meta-item">
-
                             <strong>Spring Boot</strong>
-
-                            <span>
-                                BACKEND
-                            </span>
-
+                            <span>BACKEND</span>
                         </div>
-
 
                         <div class="meta-divider"></div>
 
-
                         <div class="meta-item">
-
                             <strong>MySQL</strong>
-
-                            <span>
-                                DATABASE
-                            </span>
-
+                            <span>DATABASE</span>
                         </div>
 
+                        <div class="meta-divider"></div>
 
+                        <div class="meta-item">
+                            <strong>8.25</strong>
+                            <span>B.TECH CGPA</span>
+                        </div>
                     </div>
-
                 </div>
 
-
-
-                <!-- =========================
-             RIGHT SIDE / PROFILE IMAGE
-        ========================== -->
-
-                <div class="hero-image-wrapper">
-
-
-                    <div class="image-glow"></div>
-
+                <!-- RIGHT HERO / PROFILE IMAGE -->
+                <div class="hero-image-wrapper reveal">
+                    <div class="image-glow" aria-hidden="true"></div>
 
                     <div class="image-frame">
-
-                        <img src="assets/profile.jpg" alt="Profile photo of Hari Satya Sai Puvvala">
-
+                        <img src="assets/profile.jpg?v=2" alt="Profile photo of Hari Satya Sai Puvvala" width="410"
+                            height="420" loading="eager">
                     </div>
 
-
-                    <!-- Java Developer Badge -->
-
-                    <div class="floating-card card-one">
-
-                        <span class="card-icon">
-                            ☕
-                        </span>
-
+                    <!-- Floating Java Badge (Top Left) -->
+                    <div class="floating-card card-one" aria-hidden="true">
+                        <span class="card-icon">☕</span>
                         <div>
-
-                            <strong>
-                                Java
-                            </strong>
-
-                            <small>
-                                Developer
-                            </small>
-
+                            <strong>Java</strong>
+                            <small>Developer</small>
                         </div>
-
                     </div>
 
-
-                    <!-- Problem Solver Badge -->
-
-                    <div class="floating-card card-two">
-
-                        <span class="card-icon">
-                            ⌘
-                        </span>
-
+                    <!-- Floating Web Developer Badge (Top Right) -->
+                    <div class="floating-card card-three" aria-hidden="true">
+                        <span class="card-icon">🌐</span>
                         <div>
-
-                            <strong>
-                                Problem
-                            </strong>
-
-                            <small>
-                                Solver
-                            </small>
-
+                            <strong>Web</strong>
+                            <small>Developer</small>
                         </div>
-
                     </div>
 
+                    <!-- Floating Quick Learner Badge (Bottom Left) -->
+                    <div class="floating-card card-four" aria-hidden="true">
+                        <span class="card-icon">⚡</span>
+                        <div>
+                            <strong>Quick</strong>
+                            <small>Learner</small>
+                        </div>
+                    </div>
 
+                    <!-- Floating Problem Solver Badge (Bottom Right) -->
+                    <div class="floating-card card-two" aria-hidden="true">
+                        <span class="card-icon">⌘</span>
+                        <div>
+                            <strong>Problem</strong>
+                            <small>Solver</small>
+                        </div>
+                    </div>
                 </div>
-
 
             </div>
 
+            <!-- SCROLL INDICATOR -->
+            <a href="#summary" class="scroll-indicator" aria-label="Scroll down to About section">
+                <div class="mouse-icon">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <span>EXPLORE</span>
+            </a>
         </section>
 
         <!-- =====================================================
-             2. SUMMARY
+             2. SUMMARY / ABOUT
         ====================================================== -->
-
         <section id="summary" class="section summary-section">
-
             <div class="container">
 
-
-                <div class="section-heading">
-
-                    <span class="section-number">
-                        01
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="section-number">01</span>
                     <div>
-
-                        <p class="section-label">
-                            ABOUT ME
-                        </p>
-
-                        <h2>
-                            Building with
-                            <span>purpose.</span>
-                        </h2>
-
+                        <p class="section-label">ABOUT ME</p>
+                        <h2>Building with <span>purpose.</span></h2>
                     </div>
-
                 </div>
 
-
-
                 <div class="summary-grid">
-
-
-                    <div class="summary-intro">
-
+                    <div class="summary-intro reveal">
+                        <p class="summary-lead">
+                            Computer Science Engineering graduate seeking an entry-level Java Developer position to
+                            apply my knowledge of Core Java, OOP, Collections Framework, JDBC, Spring Boot, REST APIs,
+                            and MySQL.
+                        </p>
                         <p>
-
-                            I am a Computer Science and Engineering
-                            graduate focused on building a career in
-                            Java development and full-stack application
-                            development.
-
+                            Eager to develop reliable software applications, solve technical problems, and contribute to
+                            real-world projects while continuously strengthening my backend development skills. My
+                            background spans hands-on full-stack development, database architecture, and enterprise
+                            application fundamentals.
                         </p>
 
-
-                        <p>
-
-                            My learning journey includes hands-on
-                            exposure to Core Java, Advanced Java,
-                            Spring Boot, ReactJS, MySQL, REST APIs,
-                            JDBC, Git/GitHub, and software development
-                            practices.
-
-                        </p>
-
+                        <div class="summary-actions">
+                            <button type="button" class="btn btn-primary" data-open-contact>
+                                Let's Discuss Opportunities
+                                <span>↗</span>
+                            </button>
+                        </div>
                     </div>
 
-
-
-                    <div class="summary-highlight">
-
+                    <div class="summary-highlight reveal">
                         <div class="highlight-line"></div>
+                        <blockquote>
+                            "Learning continuously, solving problems, and turning ideas into reliable, high-performance
+                            applications."
+                        </blockquote>
+                        <cite>— Hari Satya Sai Puvvala</cite>
 
-                        <p>
+                        <div class="summary-pillars">
+                            <div class="pillar-card">
+                                <span class="pillar-icon">⚡</span>
+                                <div>
+                                    <strong>Robust Backend Systems</strong>
+                                    <small>Spring Boot, REST APIs, Exception Handling</small>
+                                </div>
+                            </div>
 
-                            "Learning continuously, solving problems,
-                            and turning ideas into working applications."
+                            <div class="pillar-card">
+                                <span class="pillar-icon">🌐</span>
+                                <div>
+                                    <strong>Designing Web Apps</strong>
+                                    <small>Developing | HTML, CSS, JS, React.js</small>
+                                </div>
+                            </div>
 
-                        </p>
+                            <div class="pillar-card">
+                                <span class="pillar-icon">DB</span>
+                                <div>
+                                    <strong>Normalized Relational DBs</strong>
+                                    <small>MySQL, 3NF Schema Design, Query Tuning</small>
+                                </div>
+                            </div>
 
-                        <span>
-                            — Hari Satya Sai Puvvala
-                        </span>
-
+                            <div class="pillar-card">
+                                <span class="pillar-icon">⌘</span>
+                                <div>
+                                    <strong>Clean Code & Architecture</strong>
+                                    <small>OOP, Collections, Design Patterns, Git</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
 
             </div>
-
         </section>
-
-
 
         <!-- =====================================================
              3. EDUCATION
         ====================================================== -->
-
         <section id="education" class="section education-section">
-
             <div class="container">
 
-
-                <div class="section-heading">
-
-                    <span class="section-number">
-                        02
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="section-number">02</span>
                     <div>
-
-                        <p class="section-label">
-                            ACADEMIC JOURNEY
-                        </p>
-
-                        <h2>
-                            Education &
-                            <span>Learning</span>
-                        </h2>
-
+                        <p class="section-label">ACADEMIC JOURNEY</p>
+                        <h2>Education & <span>Foundations</span></h2>
                     </div>
-
                 </div>
-
-
 
                 <div class="timeline">
 
-
-                    <!-- BTECH -->
-
-                    <article class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2022 — 2026
+                    <!-- B.TECH -->
+                    <article class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-stem"></div>
                         </div>
-
 
                         <div class="timeline-card">
-
-                            <span class="timeline-type">
-                                BACHELOR'S DEGREE
-                            </span>
-
-                            <h3>
-                                Bachelor of Technology
-                            </h3>
-
-                            <h4>
-                                Computer Science & Engineering
-                            </h4>
-
-                            <p>
-                                Swarnandhra College of Engineering
-                                and Technology
-                            </p>
-
-                            <p class="education-location">
-                                West Godavari, Andhra Pradesh
-                            </p>
-
-
-                            <div class="grade">
-
-                                <span>
-                                    CGPA
-                                </span>
-
-                                <strong>
-                                    8.25
-                                </strong>
-
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">BACHELOR'S DEGREE</span>
+                                <span class="timeline-period">2022 — 2026</span>
                             </div>
+                            <h3>Bachelor of Technology</h3>
+                            <h4>Computer Science and Technology</h4>
+                            <p class="timeline-institution">Swarnandhra College of Engineering and Technology (SCET)</p>
+                            <p class="timeline-location">West Godavari, Andhra Pradesh</p>
 
+                            <div class="grade-pill">
+                                <span>CGPA</span>
+                                <strong>8.25</strong>
+                            </div>
                         </div>
-
                     </article>
-
-
 
                     <!-- INTERMEDIATE -->
-
-                    <article class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2022
+                    <article class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-stem"></div>
                         </div>
-
 
                         <div class="timeline-card">
-
-                            <span class="timeline-type">
-                                INTERMEDIATE
-                            </span>
-
-                            <h3>
-                                Intermediate
-                            </h3>
-
-                            <h4>
-                                Sri Sai Aditya Junior College
-                            </h4>
-
-                            <p>
-                                Andhra Pradesh
-                            </p>
-
-
-                            <div class="grade">
-
-                                <span>
-                                    Percentage
-                                </span>
-
-                                <strong>
-                                    73.1%
-                                </strong>
-
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">INTERMEDIATE</span>
+                                <span class="timeline-period">2020 — 2022</span>
                             </div>
+                            <h3>Intermediate</h3>
+                            <h4>MPC (Mathematics, Physics, Chemistry)</h4>
+                            <p class="timeline-institution">Sri Sai Aditya Junior College</p>
+                            <p class="timeline-location">Andhra Pradesh</p>
 
+                            <div class="grade-pill">
+                                <span>Percentage</span>
+                                <strong>73.1%</strong>
+                            </div>
                         </div>
-
                     </article>
-
-
 
                     <!-- SSC -->
-
-                    <article class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2020
+                    <article class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
                         </div>
-
 
                         <div class="timeline-card">
-
-                            <span class="timeline-type">
-                                SECONDARY SCHOOL
-                            </span>
-
-                            <h3>
-                                SSC
-                            </h3>
-
-                            <h4>
-                                Bhashyam High School
-                            </h4>
-
-                            <p>
-                                Andhra Pradesh
-                            </p>
-
-
-                            <div class="grade">
-
-                                <span>
-                                    Percentage
-                                </span>
-
-                                <strong>
-                                    100%
-                                </strong>
-
+                            <div class="timeline-meta">
+                                <span class="timeline-badge">SECONDARY SCHOOL</span>
+                                <span class="timeline-period">2020</span>
                             </div>
+                            <h3>Secondary School Certificate (SSC)</h3>
+                            <h4>Class X State Board</h4>
+                            <p class="timeline-institution">Bhashyam High School</p>
+                            <p class="timeline-location">Andhra Pradesh</p>
 
+                            <div class="grade-pill grade-pill-gold">
+                                <span>Score</span>
+                                <strong>100%</strong>
+                            </div>
                         </div>
-
                     </article>
-
 
                 </div>
 
             </div>
-
         </section>
 
-
-
         <!-- =====================================================
-             4. EXPERIENCE
+             4. EXPERIENCE & TRAINING
         ====================================================== -->
-
         <section id="experience" class="section experience-section">
-
             <div class="container">
 
-
-                <div class="section-heading">
-
-                    <span class="section-number">
-                        03
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="section-number">03</span>
                     <div>
-
-                        <p class="section-label">
-                            PROFESSIONAL JOURNEY
-                        </p>
-
-                        <h2>
-                            Experience &
-                            <span>Training</span>
-                        </h2>
-
+                        <p class="section-label">PROFESSIONAL JOURNEY</p>
+                        <h2>Experience & <span>Training</span></h2>
                     </div>
-
                 </div>
-
-
 
                 <div class="experience-grid">
 
-
                     <!-- CODEGNAN -->
-
-                    <article class="experience-card featured-experience">
-
+                    <article class="experience-card featured-experience reveal">
                         <div class="experience-top">
-
-
                             <div>
-
-                                <span class="experience-label">
-                                    CURRENT TRAINING
-                                </span>
-
-                                <h3>
-                                    Java Full Stack Trainee
-                                </h3>
-
-                                <h4>
-                                    Codegnan IT Solutions
-                                </h4>
-
+                                <span class="experience-label">FULL STACK TRAINING</span>
+                                <h3>Java Full Stack Trainee</h3>
+                                <h4>Codegnan IT Solutions</h4>
                             </div>
-
-
-                            <span class="experience-date">
-                                June 2026 — Present
-                            </span>
-
-
+                            <span class="experience-date">Jun 2026 – Present</span>
                         </div>
-
 
                         <div class="experience-line"></div>
 
-
-                        <ul>
-
+                        <ul class="experience-bullets">
                             <li>
-                                Undergoing hands-on training in
-                                Java Full Stack Development.
+                                Undergoing hands-on training in Java Full Stack Development, focusing on Core Java,
+                                Advanced Java, Spring Boot, and Hibernate.
                             </li>
-
                             <li>
-                                Focusing on Core Java, Advanced Java,
-                                Spring Boot, and Hibernate.
+                                Gaining practical experience in HTML, CSS, JavaScript, React/Angular, MySQL, and
+                                real-world project development.
                             </li>
-
                             <li>
-                                Gaining practical experience with
-                                HTML, CSS, JavaScript, React/Angular,
-                                and MySQL.
+                                Participating in code reviews, technical assessments, and software architecture
+                                workshops for scalable backend services.
                             </li>
-
-                            <li>
-                                Working toward real-world project
-                                development and application skills.
-                            </li>
-
                         </ul>
 
-
                         <div class="experience-tags">
-
                             <span>Core Java</span>
                             <span>Advanced Java</span>
                             <span>Spring Boot</span>
                             <span>Hibernate</span>
                             <span>MySQL</span>
-
+                            <span>React.js</span>
+                            <span>HTML5 / CSS3</span>
+                            <span>JavaScript</span>
                         </div>
-
                     </article>
 
-
-
                     <!-- EVONSYS -->
-
-                    <article class="experience-card">
-
+                    <article class="experience-card reveal">
                         <div class="experience-top">
-
-
                             <div>
-
-                                <span class="experience-label">
-                                    INTERNSHIP
-                                </span>
-
-                                <h3>
-                                    Java Intern
-                                </h3>
-
-                                <h4>
-                                    EVONSYS INDIA PRIVATE LIMITED
-                                </h4>
-
+                                <span class="experience-label">INTERNSHIP</span>
+                                <h3>Java Intern</h3>
+                                <h4>EVONSYS INDIA Pvt. Ltd.</h4>
                             </div>
-
-
-                            <span class="experience-date">
-                                Jan 2026 — Apr 2026
-                            </span>
-
-
+                            <span class="experience-date">Jan 2026 – May 2026</span>
                         </div>
-
 
                         <div class="experience-line"></div>
 
-
-                        <ul>
-
+                        <ul class="experience-bullets">
                             <li>
-                                Completed a 3-month internship focused
-                                on Core Java, Spring Boot, MySQL,
-                                and Pega.
+                                Completed an internship at EvonSys, gaining exposure to Core Java, Pega, Business
+                                Process Automation (BPA), and low-code application development in an enterprise
+                                environment.
                             </li>
-
                             <li>
-                                Applied OOP, Collections, Exception
-                                Handling, and JDBC through hands-on
-                                coding exercises.
+                                Developed an understanding of AI-powered digital transformation, professional
+                                communication, SDLC, debugging, and version control using Git/GitHub.
                             </li>
-
-                            <li>
-                                Gained exposure to SDLC, backend
-                                architecture, debugging, clean coding,
-                                and Git/GitHub.
-                            </li>
-
                         </ul>
 
-
                         <div class="experience-tags">
-
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>MySQL</span>
-                            <span>JDBC</span>
-                            <span>Git</span>
-
+                            <span>Core Java</span>
+                            <span>Pega</span>
+                            <span>Business Process Automation (BPA)</span>
+                            <span>Low-code application development</span>
+                            <span>AI-powered digital transformation</span>
+                            <span>Git/GitHub</span>
+                            <span>SDLC & Debugging</span>
+                            <span>Professional Communication</span>
                         </div>
-
                     </article>
-
 
                 </div>
 
             </div>
-
         </section>
 
-
-
         <!-- =====================================================
-             5. PROJECTS
+             5. PROJECTS (INTERACTIVE 3D CARDS + FILTERS)
         ====================================================== -->
-        <!-- =========================
-     5. PROJECTS
-========================== -->
-
         <section id="projects" class="section projects-section">
-
             <div class="container">
 
-                <div class="section-heading">
-
+                <div class="section-heading reveal">
                     <span class="section-number">04</span>
-
                     <div>
-                        <p class="section-label">
-                            SELECTED WORK
-                        </p>
-
-                        <h2>
-                            Projects that <span>solve.</span>
-                        </h2>
+                        <p class="section-label">SELECTED WORK</p>
+                        <h2>Projects that <span>solve.</span></h2>
                     </div>
-
                 </div>
 
+                <!-- CATEGORY FILTER TABS -->
+                <div class="project-filters reveal" role="tablist" aria-label="Project Categories">
+                    <button type="button" class="filter-tab active" data-filter="all">All Projects (6)</button>
+                    <button type="button" class="filter-tab" data-filter="java">Java & Backend</button>
+                    <button type="button" class="filter-tab" data-filter="fullstack">Full Stack</button>
+                    <button type="button" class="filter-tab" data-filter="frontend">Frontend & React</button>
+                    <button type="button" class="filter-tab" data-filter="database">Database</button>
+                </div>
 
+                <!-- PROJECTS GRID -->
                 <div class="projects-grid">
 
-
-                    <!-- =========================
-                 PROJECT 01
-            ========================== -->
-
-                    <article class="project-card project-large">
-
-                        <div class="project-number">
-                            01
+                    <!-- PROJECT 01: Swift Ride -->
+                    <article class="project-card project-featured reveal" data-category="java"
+                        data-project-id="swift-ride">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_swift_ride.jpg" alt="Swift Ride – Ride Booking System Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
                         </div>
+                        <div class="project-number">01</div>
 
                         <div class="project-content">
-
                             <div class="project-top">
-
-                                <span class="project-category">
-                                    WEB APPLICATION
-                                </span>
-
-                                <span class="project-date">
-                                    2025
-                                </span>
-
+                                <span class="project-badge badge-cyan">CORE JAVA BACKEND</span>
+                                <span class="project-date">Jun 2026 – Jul 2026</span>
                             </div>
 
-
-                            <h3>
-                                TrendPulse
-                            </h3>
-
+                            <h3>Swift Ride – Ride Booking System <span class="project-title-arrow">↗</span></h3>
 
                             <p>
-                                A real-time news aggregation platform designed
-                                to display news with category filtering, search,
-                                bookmarks, and redirection to official sources.
+                                Developed a console-based ride-booking application supporting Bike, Auto, and Cab rides
+                                with dynamic fare calculation, rider/driver management, payment processing, custom
+                                exception handling, and safety/SOS functionality.
                             </p>
-
 
                             <div class="project-tech">
-
-                                <span>React</span>
-                                <span>JavaScript</span>
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>News API</span>
-                                <span>Vercel</span>
-
-                            </div>
-
-
-                            <div class="project-actions">
-
-                                <a href="https://github.com/Hari-CodeTech/TrendPulse-A-Real-Time-News-Website"
-                                    target="_blank" rel="noopener noreferrer" class="project-link">
-
-                                    View GitHub
-
-                                    <span>↗</span>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =========================
-                 PROJECT 02
-            ========================== -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            02
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    FULL STACK
-                                </span>
-
-                                <span class="project-status">
-                                    Ongoing
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                Government Scheme
-                                Information System
-                            </h3>
-
-
-                            <p>
-                                A full-stack application for searching and
-                                filtering government schemes by state,
-                                category, and eligibility.
-                            </p>
-
-
-                            <div class="project-tech">
-
-                                <span>Java</span>
-                                <span>Spring Boot</span>
-                                <span>MySQL</span>
-                                <span>REST APIs</span>
-
-                            </div>
-
-
-                            <div class="project-actions">
-
-                                <span class="project-coming">
-                                    Repository coming soon
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =========================
-                 PROJECT 03
-            ========================== -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            03
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    CORE JAVA
-                                </span>
-
-                                <span class="project-date">
-                                    Jun – Jul 2026
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                Swift Ride – A Ride Booking System
-                            </h3>
-
-
-                            <p>
-                                A console-based ride booking application
-                                supporting Bike, Auto, and Cab ride types
-                                with rider, driver, vehicle, ride management,
-                                and dynamic fare calculation.
-                            </p>
-
-
-                            <p>
-                                Applied OOP principles, ArrayList, custom
-                                exception handling, milestone-based offers,
-                                payments, and safety/SOS modules using a
-                                modular architecture.
-                            </p>
-
-
-                            <div class="project-tech">
-
                                 <span>Core Java</span>
                                 <span>OOP</span>
                                 <span>Collections</span>
                                 <span>Exception Handling</span>
-                                <span>ArrayList</span>
-
+                                <span>Fare Engine</span>
                             </div>
 
-
                             <div class="project-actions">
-
+                                <button type="button" class="project-details-btn">
+                                    Case Study Details
+                                    <span>🔍</span>
+                                </button>
                                 <a href="https://github.com/Hari-CodeTech/SwiftRide-Java-Project" target="_blank"
                                     rel="noopener noreferrer" class="project-link">
-
                                     View GitHub
-
                                     <span>↗</span>
-
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-
-                    <!-- =========================
-                 PROJECT 04
-            ========================== -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            04
+                    <!-- PROJECT 02: TrendPulse -->
+                    <article class="project-card reveal" data-category="frontend" data-project-id="trend-pulse">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_trend_pulse.jpg" alt="TrendPulse – News Aggregator Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
                         </div>
+                        <div class="project-number">02</div>
 
                         <div class="project-content">
-
                             <div class="project-top">
-
-                                <span class="project-category">
-                                    REACT APPLICATION
-                                </span>
-
-                                <span class="project-date">
-                                    Jul 2025
-                                </span>
-
+                                <span class="project-badge badge-purple">WEB APPLICATION</span>
+                                <span class="project-date">Jan 2026 – Mar 2026</span>
                             </div>
 
-
-                            <h3>
-                                React Quizzer
-                            </h3>
-
+                            <h3>TrendPulse – News Aggregator <span class="project-title-arrow">↗</span></h3>
 
                             <p>
-                                An interactive quiz application with
-                                real-time scoring, state management,
-                                and a responsive user interface.
+                                Built a React-based news aggregation platform featuring category filtering, keyword
+                                search, bookmarks, and redirection to official news sources. Integrated News API with
+                                dark mode and breaking-news ticker.
                             </p>
 
-
                             <div class="project-tech">
-
                                 <span>React</span>
                                 <span>JavaScript</span>
-
+                                <span>News API</span>
+                                <span>CSS3</span>
+                                <span>Vercel</span>
                             </div>
-
 
                             <div class="project-actions">
-
-                                <a href="https://github.com/Hari-CodeTech/Basic-Quiz-App-using-ReactJS" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-
+                                <button type="button" class="project-details-btn">
+                                    Case Study Details
+                                    <span>🔍</span>
+                                </button>
+                                <a href="https://github.com/Hari-CodeTech/TrendPulse-A-Real-Time-News-Website"
+                                    target="_blank" rel="noopener noreferrer" class="project-link">
                                     View GitHub
-
                                     <span>↗</span>
-
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- =========================
-                 PROJECT 05
-            ========================== -->
-
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            05
+                    <!-- PROJECT 03: JobTrack -->
+                    <article class="project-card reveal" data-category="database" data-project-id="job-track">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_job_track.jpg" alt="JobTrack – Recruitment DBMS Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
                         </div>
+                        <div class="project-number">03</div>
 
                         <div class="project-content">
-
                             <div class="project-top">
-
-                                <span class="project-category">
-                                    REACT APPLICATION
-                                </span>
-
-                                <span class="project-date">
-                                    Oct 2026
-                                </span>
-
+                                <span class="project-badge badge-blue">DATABASE MANAGEMENT</span>
+                                <span class="project-date">Sep 2026 – Oct 2026</span>
                             </div>
 
-                            <h3>
-                                Personal Borrowed Money Tracker
-                            </h3>
+                            <h3>JobTrack – Recruitment DBMS <span class="project-title-arrow">↗</span></h3>
 
                             <p>
-                                A personal financial tracking application to organize
-                                records by people and categories, manage transactions,
-                                calculate balances, and track repayments through a
+                                Designed a normalized relational MySQL database to manage job applications, candidates,
+                                companies, and job postings. Implemented relational schemas, keys, constraints, and
+                                optimized SQL queries.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>MySQL</span>
+                                <span>SQL</span>
+                                <span>DBMS / RDBMS</span>
+                                <span>3NF Normalization</span>
+                                <span>Indexing</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-details-btn">
+                                    Case Study Details
+                                    <span>🔍</span>
+                                </button>
+                                <a href="https://github.com/Hari-CodeTech/JobTrack-SQL_Project" target="_blank"
+                                    rel="noopener noreferrer" class="project-link">
+                                    View GitHub
+                                    <span>↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 04: Government Scheme Information System -->
+                    <article class="project-card reveal" data-category="java fullstack" data-project-id="govt-scheme">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_govt_scheme.jpg" alt="Government Scheme Information System Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-number">04</div>
+
+                        <div class="project-content">
+                            <div class="project-top">
+                                <span class="project-badge badge-orange">FULL STACK JAVA</span>
+                                <span class="project-status">In Progress</span>
+                            </div>
+
+                            <h3>Government Scheme Information System <span class="project-title-arrow">↗</span></h3>
+
+                            <p>
+                                Developing a full-stack web application to search and filter government schemes based on
+                                state, category, and eligibility criteria. Building REST APIs using Spring Boot with
+                                MySQL backend.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>Java</span>
+                                <span>Spring Boot</span>
+                                <span>MySQL</span>
+                                <span>REST APIs</span>
+                                <span>Hibernate</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-details-btn">
+                                    Architecture Overview
+                                    <span>🔍</span>
+                                </button>
+                                <span class="project-coming">Repository coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 05: Portfolio Website -->
+                    <article class="project-card reveal" data-category="frontend" data-project-id="portfolio-site">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_portfolio.jpg" alt="Personal Portfolio Website Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-number">05</div>
+
+                        <div class="project-content">
+                            <div class="project-top">
+                                <span class="project-badge badge-cyan">PORTFOLIO</span>
+                                <span class="project-status-live">● Live</span>
+                            </div>
+
+                            <h3>Personal Portfolio Website <span class="project-title-arrow">↗</span></h3>
+
+                            <p>
+                                Developed and deployed a responsive personal portfolio featuring interactive HTML5
+                                canvas particle network, signature orbital Hire Me button, custom cursor dynamics, and
+                                glassmorphic UI.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Canvas</span>
+                                <span>Vercel</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-details-btn">
+                                    Case Study Details
+                                    <span>🔍</span>
+                                </button>
+                                <a href="https://hari-satya-sai-portfolio-website.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer" class="project-link project-link-live">
+                                    Live Demo
+                                    <span>↗</span>
+                                </a>
+                                <a href="https://github.com/Hari-CodeTech/hari-satya-sai-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="project-link">
+                                    GitHub
+                                    <span>↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 06: Personal Borrowed Money Tracker -->
+                    <article class="project-card reveal" data-category="frontend fullstack"
+                        data-project-id="borrowed-money-tracker">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="project-image-box">
+                            <img src="assets/project_borrowed_money.jpg" alt="Personal Borrowed Money Tracker Preview"
+                                loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-number">06</div>
+
+                        <div class="project-content">
+                            <div class="project-top">
+                                <span class="project-badge badge-purple">FINANCIAL TRACKER</span>
+                                <span class="project-date">Oct 2026</span>
+                            </div>
+
+                            <h3>Personal Borrowed Money Tracker <span class="project-title-arrow">↗</span></h3>
+
+                            <p>
+                                A personal financial tracking application to organize records by people and categories,
+                                manage transactions, calculate balances, and track repayments through an intuitive
                                 responsive dashboard.
                             </p>
 
                             <div class="project-tech">
-
                                 <span>React</span>
                                 <span>JavaScript</span>
                                 <span>Vite</span>
-                                <span>CSS</span>
-
+                                <span>CSS3</span>
+                                <span>Vercel</span>
                             </div>
 
                             <div class="project-actions">
-
+                                <button type="button" class="project-details-btn">
+                                    Case Study Details
+                                    <span>🔍</span>
+                                </button>
                                 <a href="https://personal-borrowed-money-tracker-chi.vercel.app/" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-
+                                    rel="noopener noreferrer" class="project-link project-link-live">
                                     Live Demo
-
                                     <span>↗</span>
-
                                 </a>
-
                                 <a href="https://github.com/Hari-CodeTech/personal-borrowed-money-tracker"
                                     target="_blank" rel="noopener noreferrer" class="project-link">
-
-                                    View GitHub
-
+                                    GitHub
                                     <span>↗</span>
-
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
-
-
-
-
-                    <!-- =========================
-                 PROJECT 06
-            ========================== -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            06
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    PERSONAL PROJECT
-                                </span>
-
-                                <span class="project-status">
-                                    Current
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                Portfolio Website
-                            </h3>
-
-
-                            <p>
-                                A responsive personal portfolio designed
-                                to showcase projects, technical skills,
-                                education, experience, and professional
-                                information.
-                            </p>
-
-
-                            <div class="project-tech">
-
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>Responsive Design</span>
-
-                            </div>
-
-
-                            <div class="project-actions">
-
-                                <a href="https://hari-satya-sai-portfolio-website.vercel.app/" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-
-                                    Live Demo
-
-                                    <span>↗</span>
-
-                                </a>
-
-                                <a href="https://github.com/Hari-CodeTech/hari-satya-sai-portfolio.git" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-
-                                    View GitHub
-
-                                    <span>↗</span>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
 
                 </div>
 
             </div>
-
         </section>
 
-
-
-
-
-
         <!-- =====================================================
-             6. SKILLS
+             6. SKILLS & TECHNOLOGIES
         ====================================================== -->
-
         <section id="skills" class="section skills-section">
-
             <div class="container">
 
-
-                <div class="section-heading">
-
-                    <span class="section-number">
-                        05
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="section-number">05</span>
                     <div>
-
-                        <p class="section-label">
-                            TECHNICAL TOOLKIT
-                        </p>
-
-                        <h2>
-                            Skills &
-                            <span>Technologies</span>
-                        </h2>
-
+                        <p class="section-label">TECHNICAL TOOLKIT</p>
+                        <h2>Skills & <span>Technologies</span></h2>
                     </div>
-
                 </div>
-
-
 
                 <div class="skills-layout">
 
-
-                    <!-- PROGRAMMING -->
-
-                    <div class="skill-category">
-
+                    <!-- 1. PROGRAMMING LANGUAGES -->
+                    <div class="skill-category reveal">
                         <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                &lt;/&gt;
-                            </span>
-
-                            <h3>
-                                Programming
-                            </h3>
-
+                            <span class="skill-icon">&lt;/&gt;</span>
+                            <h3>Programming Languages</h3>
                         </div>
-
-
                         <div class="skill-list">
+                            <span>Java</span>
+                            <span>SQL</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
 
+                    <!-- 2. BACKEND TECHNOLOGIES -->
+                    <div class="skill-category reveal">
+                        <div class="skill-category-title">
+                            <span class="skill-icon">⚡</span>
+                            <h3>Backend Technologies</h3>
+                        </div>
+                        <div class="skill-list">
                             <span>Core Java</span>
                             <span>Advanced Java</span>
-
+                            <span>JDBC</span>
+                            <span>Servlets</span>
+                            <span>JSP</span>
+                            <span>Hibernate</span>
+                            <span>Spring</span>
+                            <span>Spring Boot</span>
+                            <span>REST APIs</span>
                         </div>
-
                     </div>
 
-
-
-                    <!-- WEB -->
-
-                    <div class="skill-category">
-
+                    <!-- 3. DATABASES -->
+                    <div class="skill-category reveal">
                         <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                ◈
-                            </span>
-
-                            <h3>
-                                Web Technologies
-                            </h3>
-
+                            <span class="skill-icon">DB</span>
+                            <h3>Databases</h3>
                         </div>
-
-
                         <div class="skill-list">
+                            <span>MySQL</span>
+                            <span>DBMS</span>
+                            <span>RDBMS</span>
+                            <span>Schema Design</span>
+                        </div>
+                    </div>
 
+                    <!-- 4. CORE CONCEPTS -->
+                    <div class="skill-category reveal">
+                        <div class="skill-category-title">
+                            <span class="skill-icon">#</span>
+                            <h3>Core Concepts</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span>OOP Principles</span>
+                            <span>Collections Framework</span>
+                            <span>Exception Handling</span>
+                            <span>Multithreading</span>
+                            <span>DSA Fundamentals</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. FRONTEND TECHNOLOGIES -->
+                    <div class="skill-category reveal">
+                        <div class="skill-category-title">
+                            <span class="skill-icon">◈</span>
+                            <h3>Frontend Technologies</h3>
+                        </div>
+                        <div class="skill-list">
                             <span>HTML5</span>
                             <span>CSS3</span>
-                            <span>JavaScript</span>
-
+                            <span>Bootstrap</span>
+                            <span>React.js</span>
+                            <span>Responsive Design</span>
                         </div>
-
                     </div>
 
-
-
-                    <!-- FRAMEWORKS -->
-
-                    <div class="skill-category">
-
+                    <!-- 6. DEVELOPER TOOLS -->
+                    <div class="skill-category reveal">
                         <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                ◉
-                            </span>
-
-                            <h3>
-                                Frameworks
-                            </h3>
-
+                            <span class="skill-icon">⚙</span>
+                            <h3>Developer Tools</h3>
                         </div>
-
-
                         <div class="skill-list">
-
-                            <span>Spring Boot</span>
-                            <span>ReactJS</span>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- DATABASE -->
-
-                    <div class="skill-category">
-
-                        <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                DB
-                            </span>
-
-                            <h3>
-                                Database
-                            </h3>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>MySQL</span>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- TOOLS -->
-
-                    <div class="skill-category">
-
-                        <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                ⚙
-                            </span>
-
-                            <h3>
-                                Tools & Cloud
-                            </h3>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>AWS</span>
+                            <span>Git</span>
                             <span>GitHub</span>
-                            <span>ServiceNow</span>
-                            <span>REST API</span>
-
+                            <span>Eclipse</span>
+                            <span>Visual Studio Code</span>
+                            <span>Postman</span>
                         </div>
-
                     </div>
 
-
-
-                    <!-- CORE CONCEPTS -->
-
-                    <div class="skill-category">
-
+                    <!-- 7. OTHER TECHNOLOGIES -->
+                    <div class="skill-category reveal">
                         <div class="skill-category-title">
-
-                            <span class="skill-icon">
-                                #
-                            </span>
-
-                            <h3>
-                                Core Concepts
-                            </h3>
-
+                            <span class="skill-icon">⌥</span>
+                            <h3>Other Technologies</h3>
                         </div>
-
-
                         <div class="skill-list">
-
-                            <span>OOPs</span>
-                            <span>Collections</span>
-                            <span>Exception Handling</span>
-                            <span>JDBC</span>
-                            <span>Agile</span>
-                            <span>SDLC</span>
-
+                            <span>GitHub Actions</span>
+                            <span>SDLC Fundamentals</span>
+                            <span>Code Debugging</span>
+                            <span>Clean Architecture</span>
                         </div>
-
                     </div>
-
 
                 </div>
-
-
 
                 <!-- CERTIFICATIONS -->
-
-                <div class="certifications">
-
-                    <h3>
-                        Certifications & Internships
-                    </h3>
-
-
-                    <div class="certificate-list">
-
-                        <span>
-                            ServiceNow Certified Application
-                            Developer (CAD)
-                        </span>
-
-                        <span>
-                            AWS Data Engineering Virtual Internship
-                        </span>
-
-                        <span>
-                            Java Full Stack Development
-                            Virtual Internship
-                        </span>
-
+                <div class="certifications reveal">
+                    <div class="certifications-heading">
+                        <h3>Certifications & Virtual Internships</h3>
                     </div>
 
-                </div>
+                    <div class="certifications-grid">
+                        <div class="cert-card">
+                            <div class="cert-card-header">
+                                <span class="cert-icon">📜</span>
+                                <span class="cert-date">Nov 2025</span>
+                            </div>
+                            <h4>ServiceNow Certified Application Developer (CAD)</h4>
+                            <p class="cert-issuer">ServiceNow</p>
+                        </div>
 
+                        <div class="cert-card">
+                            <div class="cert-card-header">
+                                <span class="cert-icon">☁️</span>
+                                <span class="cert-date">2024</span>
+                            </div>
+                            <h4>AWS Data Engineering Virtual Internship</h4>
+                            <p class="cert-issuer">AICTE and Edu Skills</p>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-card-header">
+                                <span class="cert-icon">☕</span>
+                                <span class="cert-date">2024</span>
+                            </div>
+                            <h4>Java Full Stack Development Virtual Internship</h4>
+                            <p class="cert-issuer">AICTE and Edu Skills</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
         </section>
 
-
-
         <!-- =====================================================
-             7. LANGUAGES
+             7. ACHIEVEMENTS & ACTIVITIES
         ====================================================== -->
-
-        <section id="languages" class="section languages-section">
-
+        <section id="achievements" class="section achievements-section">
             <div class="container">
 
-
-                <div class="section-heading">
-
-                    <span class="section-number">
-                        06
-                    </span>
-
+                <div class="section-heading reveal">
+                    <span class="section-number">06</span>
                     <div>
+                        <p class="section-label">HONORS & RECOGNITION</p>
+                        <h2>Achievements & <span>Activities</span></h2>
+                    </div>
+                </div>
 
-                        <p class="section-label">
-                            COMMUNICATION
-                        </p>
+                <div class="achievements-grid">
 
-                        <h2>
-                            Languages I
-                            <span>Speak</span>
-                        </h2>
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-content">
+                            <span class="achievement-badge">Assessment Excellence</span>
+                            <h3>98–100% in Assessments</h3>
+                            <p>
+                                Achieved up to 98–100% in Java, SQL, and technical assessments during full-stack
+                                development training.
+                            </p>
+                        </div>
+                    </div>
 
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">🏅</div>
+                        <div class="achievement-content">
+                            <span class="achievement-badge">Rank Holder</span>
+                            <h3>8th Place Performance Ranking</h3>
+                            <p>
+                                Secured 8th place in the comprehensive training performance ranking among peer trainees.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">⭐</div>
+                        <div class="achievement-content">
+                            <span class="achievement-badge">Special Recognition</span>
+                            <h3>Weekly Warrior & Expert Performer</h3>
+                            <p>
+                                Earned Weekly Warrior and Expert Performer recognition during technical training for
+                                consistent code quality and problem solving.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
 
+            </div>
+        </section>
 
+        <!-- =====================================================
+             8. LANGUAGES
+        ====================================================== -->
+        <section id="languages" class="section languages-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-number">07</span>
+                    <div>
+                        <p class="section-label">COMMUNICATION</p>
+                        <h2>Languages I <span>Speak</span></h2>
+                    </div>
+                </div>
 
                 <div class="languages-grid">
 
-
                     <!-- ENGLISH -->
-
-                    <article class="language-card">
-
+                    <article class="language-card reveal">
                         <div class="language-top">
-
-                            <span class="language-symbol">
-                                A
-                            </span>
-
-                            <span class="language-level">
-                                Professional
-                            </span>
-
+                            <span class="language-symbol">A</span>
+                            <span class="language-level">Professional</span>
                         </div>
-
-
-                        <h3>
-                            English
-                        </h3>
-
-
-                        <p>
-                            Professional Working Proficiency
-                        </p>
-
+                        <h3>English</h3>
+                        <p>Professional Working Proficiency</p>
                     </article>
-
-
 
                     <!-- HINDI -->
-
-                    <article class="language-card">
-
+                    <article class="language-card reveal">
                         <div class="language-top">
-
-                            <span class="language-symbol">
-                                अ
-                            </span>
-
-                            <span class="language-level">
-                                Understand
-                            </span>
-
+                            <span class="language-symbol">अ</span>
+                            <span class="language-level">Understand</span>
                         </div>
-
-
-                        <h3>
-                            Hindi
-                        </h3>
-
-
-                        <p>
-                            Apprehend
-                        </p>
-
+                        <h3>Hindi</h3>
+                        <p>Apprehend</p>
                     </article>
-
-
 
                     <!-- TELUGU -->
-
-                    <article class="language-card">
-
+                    <article class="language-card reveal">
                         <div class="language-top">
-
-                            <span class="language-symbol">
-                                అ
-                            </span>
-
-                            <span class="language-level">
-                                Native
-                            </span>
-
+                            <span class="language-symbol">అ</span>
+                            <span class="language-level">Native</span>
                         </div>
-
-
-                        <h3>
-                            Telugu
-                        </h3>
-
-
-                        <p>
-                            Native / Fluent
-                        </p>
-
+                        <h3>Telugu</h3>
+                        <p>Native / Fluent</p>
                     </article>
-
 
                 </div>
 
             </div>
-
         </section>
 
+        <!-- =====================================================
+             8. FREQUENTLY ASKED QUESTIONS (FAQS)
+        ====================================================== -->
+        <section id="faqs" class="section faqs-section">
+            <div class="container">
+
+                <!-- WATERMARK HEADER WITH GLOWING ORANGE RING -->
+                <div class="faqs-header reveal">
+                    <div class="faqs-watermark" aria-hidden="true">FAQ'S</div>
+                    <h2 class="faqs-title">FAQ'S</h2>
+                    <div class="faqs-glowing-ring" aria-hidden="true"></div>
+                </div>
+
+                <!-- DUAL-COLUMN FAQ COMPONENT -->
+                <div class="faqs-container reveal">
+                    <div class="faqs-col-header">
+                        <h3 class="faqs-col-label">FAQs</h3>
+                        <h3 class="faqs-col-label">Answers</h3>
+                    </div>
+
+                    <div class="faqs-grid">
+
+                        <!-- LEFT: QUESTIONS LIST -->
+                        <div class="faqs-questions" role="tablist" aria-label="Frequently Asked Questions">
+                            <button type="button" class="faq-btn active" role="tab" aria-selected="true" data-faq="1">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">Who are you?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="2">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">Why should we hire you?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="3">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">What technologies are you proficient in?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="4">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">What is your experience with frontend and backend
+                                    development?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="5">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">Do you have experience working in teams?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="6">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">How can I contact you for a project?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="7">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">Are you available for hire, and what kind of roles are you
+                                    interested in?</span>
+                            </button>
+
+                            <button type="button" class="faq-btn" role="tab" aria-selected="false" data-faq="8">
+                                <span class="faq-btn-star">★</span>
+                                <span class="faq-btn-text">My question isn't listed here!</span>
+                            </button>
+                        </div>
+
+                        <!-- RIGHT: DETAILED ANSWER CARD -->
+                        <div class="faqs-answer-pane" role="tabpanel" id="faqAnswerPanel" aria-live="polite">
+                            <div class="faqs-answer-card">
+                                <div class="faq-answer-star">★</div>
+                                <div class="faq-answer-content" id="faqAnswerContent">
+                                    <p>I am Hari Satya Sai Puvvala, a Computer Science and Engineering graduate focused
+                                        on Full Stack Java Development. I enjoy building web applications, solving
+                                        programming problems, and continuously improving my technical skills.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             9. CONTACT SECTION
+        ====================================================== -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-number">09</span>
+                    <div>
+                        <p class="section-label">GET IN TOUCH</p>
+                        <h2>Let's build something <span>remarkable.</span></h2>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+
+                    <!-- LEFT: DIRECT CARDS & HIRE BUTTON -->
+                    <div class="contact-info reveal">
+                        <p class="contact-intro">
+                            Whether you are looking to hire a dedicated Full Stack Java Developer, explore collaboration
+                            on software projects, or discuss technical opportunities, I'm ready to connect.
+                        </p>
+
+                        <!-- SECOND SIGNATURE HIRE ME BUTTON -->
+                        <div class="contact-hire-cta">
+                            <p class="cta-label">Direct Candidate Inquiry:</p>
+                            <div class="hire-me-interactive" role="button" tabindex="0"
+                                aria-label="Hire Me - Open Contact Modal">
+                                <canvas width="240" height="76"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="contact-cards">
+                            <!-- Phone -->
+                            <a href="tel:+917989856745" class="contact-card">
+                                <span class="contact-card-icon">📞</span>
+                                <div>
+                                    <small>PHONE / MOBILE</small>
+                                    <strong>+91 7989856745</strong>
+                                </div>
+                                <span class="card-arrow">↗</span>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:haripuvvala7924@gmail.com" class="contact-card">
+                                <span class="contact-card-icon">✉</span>
+                                <div>
+                                    <small>EMAIL ADDRESS</small>
+                                    <strong>haripuvvala7924@gmail.com</strong>
+                                </div>
+                                <span class="card-arrow">↗</span>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/Hari-CodeTech" target="_blank" rel="noopener noreferrer"
+                                class="contact-card">
+                                <span class="contact-card-icon">⌥</span>
+                                <div>
+                                    <small>GITHUB REPOSITORIES</small>
+                                    <strong>github.com/Hari-CodeTech</strong>
+                                </div>
+                                <span class="card-arrow">↗</span>
+                            </a>
+
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/" target="_blank"
+                                rel="noopener noreferrer" class="contact-card">
+                                <span class="contact-card-icon">in</span>
+                                <div>
+                                    <small>LINKEDIN PROFILE</small>
+                                    <strong>hari-satya-sai-puvvala</strong>
+                                </div>
+                                <span class="card-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: DIRECT MESSAGE FORM -->
+                    <div class="contact-form-wrapper reveal">
+                        <h3>Send a Direct Note</h3>
+                        <p>Fill out the form below to initiate an immediate inquiry.</p>
+
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="cf-name">Your Name</label>
+                                <input type="text" id="cf-name" name="name" placeholder="e.g. Alex Morgan" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cf-email">Your Email</label>
+                                <input type="email" id="cf-email" name="email" placeholder="e.g. alex@company.com"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cf-subject">Subject</label>
+                                <input type="text" id="cf-subject" name="subject"
+                                    placeholder="e.g. Entry-Level Java Role / Opportunity">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cf-message">Message</label>
+                                <textarea id="cf-message" name="message" rows="4"
+                                    placeholder="Briefly describe your requirements or inquiry..." required></textarea>
+                            </div>
+
+                            <div id="form-status" class="form-status" aria-live="polite"></div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                Send Message via Mail
+                                <span>✉</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
 
     </main>
-
-
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
-
-    <!-- =========================
-     FOOTER
-========================== -->
-
     <footer class="footer">
-
-        <div class="footer-content">
+        <div class="container footer-content">
 
             <!-- FOOTER BRAND -->
             <div class="footer-brand">
-
-                <div class="footer-logo">
-                    HS
-                </div>
-
+                <div class="footer-logo">HS</div>
                 <div>
                     <h3>Hari Satya Sai Puvvala</h3>
-                    <p>Full Stack Java Developer</p>
+                    <p>Full Stack Java Developer • Hyderabad, Telangana</p>
                 </div>
-
             </div>
-
 
             <!-- FOOTER LINKS -->
             <div class="footer-links">
-
-                <!-- EMAIL LINK -->
                 <a href="mailto:haripuvvala7924@gmail.com" class="footer-link">
                     Email
                 </a>
-
-                <!-- GITHUB LINK -->
                 <a href="https://github.com/Hari-CodeTech" target="_blank" rel="noopener noreferrer"
                     class="footer-link">
                     GitHub
                 </a>
-
-                <!-- LINKEDIN LINK -->
                 <a href="https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/" target="_blank"
                     rel="noopener noreferrer" class="footer-link">
                     LinkedIn
                 </a>
-
-                <!-- RESUME DOWNLOAD -->
-                <a href="assets/Hari_Java_Resume_compressed.pdf" download class="footer-link footer-resume">
+                <a href="assets/Hari_Java_Resume_compressed.pdf" download="Hari_Java_Resume_compressed.pdf"
+                    class="footer-link footer-resume">
                     Download Resume
                     <span>↓</span>
                 </a>
-
-
-
             </div>
-
 
             <!-- EMAIL ADDRESS -->
             <div class="footer-contact">
-
-                <span class="footer-contact-label">
-                    EMAIL
-                </span>
-
-                <a href="mailto:haripuvvala7924@gmail.com">
-                    haripuvvala7924@gmail.com
-                </a>
-
+                <span class="footer-contact-label">DIRECT CONTACT</span>
+                <a href="mailto:haripuvvala7924@gmail.com">haripuvvala7924@gmail.com</a>
+                <a href="tel:+917989856745">+91 7989856745</a>
             </div>
-
 
             <!-- COPYRIGHT -->
             <div class="footer-bottom">
-
-                <p>
-                    © 2026 Hari Satya Sai Puvvala.
-                    All Rights Reserved.
-                </p>
-
-                <p>
-                    Built with HTML5 &amp; CSS3 and VibeCoding
-                </p>
-
+                <p>© 2026 Hari Satya Sai Puvvala. All Rights Reserved.</p>
+                <p>Designed with Interactive Canvas &amp; Modern Web Architecture • Open to Relocation</p>
             </div>
 
         </div>
-
     </footer>
 
+    <!-- =====================================================
+         MODAL 1: INTERACTIVE CONTACT MODAL (OPENED BY HIRE ME)
+    ====================================================== -->
+    <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box contact-modal-box">
+
+            <button type="button" class="modal-close-btn" aria-label="Close Contact Modal">&times;</button>
+
+            <!-- CANDIDATE HEADER -->
+            <div class="cm-header">
+                <div class="cm-avatar">
+                    <img src="assets/profile.jpg?v=2" alt="Hari Satya Sai Puvvala" width="70" height="70">
+                </div>
+                <div>
+                    <span class="cm-badge">READY TO JOIN</span>
+                    <h3 id="cm-title">Hari Satya Sai Puvvala</h3>
+                    <p>Full Stack Java Developer • B.Tech CSE (8.25 CGPA)</p>
+                </div>
+            </div>
+
+            <div class="cm-divider"></div>
+
+            <p class="cm-intro">
+                Thank you for your interest! I am actively interviewing for <strong>entry-level Java Developer</strong>,
+                <strong>Backend Engineer</strong>, and <strong>Full Stack Developer</strong> roles.
+            </p>
+
+            <!-- ACTION CARDS WITH ONE-CLICK COPY -->
+            <div class="cm-actions">
+
+                <!-- PHONE ACTION -->
+                <div class="cm-action-card">
+                    <div class="cm-action-left">
+                        <span class="cm-action-icon">📞</span>
+                        <div>
+                            <small>MOBILE NUMBER</small>
+                            <strong>+91 7989856745</strong>
+                        </div>
+                    </div>
+                    <div class="cm-btn-group">
+                        <button type="button" id="copy-phone-btn" class="cm-btn-copy" title="Copy phone number">
+                            Copy Phone
+                        </button>
+                        <a href="tel:+917989856745" class="cm-btn-primary">
+                            Call Direct
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EMAIL ACTION -->
+                <div class="cm-action-card">
+                    <div class="cm-action-left">
+                        <span class="cm-action-icon">✉</span>
+                        <div>
+                            <small>PRIMARY EMAIL</small>
+                            <strong>haripuvvala7924@gmail.com</strong>
+                        </div>
+                    </div>
+                    <div class="cm-btn-group">
+                        <button type="button" id="copy-email-btn" class="cm-btn-copy" title="Copy email address">
+                            Copy Email
+                        </button>
+                        <a href="mailto:haripuvvala7924@gmail.com" class="cm-btn-primary">
+                            Send Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROFILES & RESUME -->
+                <div class="cm-links-grid">
+                    <a href="https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/" target="_blank"
+                        rel="noopener noreferrer" class="cm-link-btn">
+                        <span>in</span> LinkedIn Profile ↗
+                    </a>
+                    <a href="https://github.com/Hari-CodeTech" target="_blank" rel="noopener noreferrer"
+                        class="cm-link-btn">
+                        <span>⌥</span> GitHub Profile ↗
+                    </a>
+                    <a href="assets/Hari_Java_Resume_compressed.pdf" download="Hari_Java_Resume_compressed.pdf"
+                        class="cm-link-btn cm-link-resume">
+                        <span>↓</span> Download Resume PDF
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="cm-footer">
+                <span>📍 Location: Hyderabad, Telangana</span>
+                <span>•</span>
+                <span>Open to Relocation across India</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =====================================================
+         MODAL 2: PROJECT CASE STUDY & ARCHITECTURE DEEP DIVE
+    ====================================================== -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-box project-modal-box">
+
+            <button type="button" class="modal-close-btn" aria-label="Close Project Details">&times;</button>
+
+            <div class="pm-header">
+                <div class="pm-meta-top">
+                    <span id="pm-number" class="pm-number">01</span>
+                    <span id="pm-category" class="pm-category">CORE JAVA BACKEND</span>
+                    <span id="pm-date" class="pm-date">Jun 2026 – Jul 2026</span>
+                </div>
+                <h3 id="pm-title">Project Title</h3>
+                <p id="pm-summary" class="pm-summary">Project Summary Description</p>
+            </div>
+
+            <div class="pm-content">
+
+                <!-- PROBLEM -->
+                <div class="pm-section">
+                    <h4><span class="pm-icon">🎯</span> Problem & Technical Challenge</h4>
+                    <p id="pm-problem"></p>
+                </div>
+
+                <!-- SOLUTION -->
+                <div class="pm-section">
+                    <h4><span class="pm-icon">💡</span> Engineering Solution</h4>
+                    <p id="pm-solution"></p>
+                </div>
+
+                <!-- ARCHITECTURE -->
+                <div class="pm-section">
+                    <h4><span class="pm-icon">🏛️</span> Architecture & Core Mechanics</h4>
+                    <p id="pm-architecture"></p>
+                </div>
+
+                <!-- TECH STACK -->
+                <div class="pm-section">
+                    <h4><span class="pm-icon">⚡</span> Technology Stack & Libraries</h4>
+                    <div id="pm-tech" class="pm-tags"></div>
+                </div>
+
+            </div>
+
+            <div class="pm-footer">
+                <a id="pm-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    View GitHub Repository
+                    <span>↗</span>
+                </a>
+                <a id="pm-live" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    Launch Live Demo
+                    <span>↗</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN INTERACTION SCRIPT -->
+    <script src="app.js"></script>
 
 </body>
 

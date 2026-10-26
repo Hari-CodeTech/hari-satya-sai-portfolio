@@ -1,0 +1,7 @@
+# Backups & Temporary testing files
+*.backup
+*.log
+test_*.png
+screenshot*.png
+.DS_Store
+Thumbs.db
