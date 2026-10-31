@@ -165,17 +165,142 @@
     }
 
     function createTerminalMarkup() {
-        // Floating Trigger Button
+        // Floating Robot Mascot Trigger Button
         triggerBtn = document.createElement('button');
         triggerBtn.className = 'dev-terminal-trigger';
         triggerBtn.id = 'devTerminalTrigger';
         triggerBtn.type = 'button';
-        triggerBtn.setAttribute('aria-label', 'Open Interactive Developer Terminal');
+        triggerBtn.setAttribute('aria-label', 'Open Interactive Developer Terminal (Ctrl + ~)');
         triggerBtn.innerHTML = `
-            <span class="trigger-dot" aria-hidden="true"></span>
-            <span class="trigger-icon" aria-hidden="true">&gt;_</span>
-            <span>Terminal</span>
-            <span class="trigger-shortcut" aria-hidden="true">Ctrl + ~</span>
+            <div class="robot-mascot-wrapper" aria-hidden="true">
+                <svg class="robot-svg" viewBox="0 0 100 110" width="62" height="68" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- 3D White Ceramic Body Shading -->
+                        <linearGradient id="robotBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="45%" stop-color="#f1f5f9"/>
+                            <stop offset="85%" stop-color="#cbd5e1"/>
+                            <stop offset="100%" stop-color="#94a3b8"/>
+                        </linearGradient>
+
+                        <!-- Metallic Joint Shading -->
+                        <linearGradient id="robotMetalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#e2e8f0"/>
+                            <stop offset="100%" stop-color="#64748b"/>
+                        </linearGradient>
+
+                        <!-- Visor Dark Gloss -->
+                        <linearGradient id="robotVisorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#0a1020"/>
+                            <stop offset="100%" stop-color="#020617"/>
+                        </linearGradient>
+
+                        <!-- Visor Glass Curved Specular Sheen -->
+                        <linearGradient id="robotGlassSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+                            <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.2"/>
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                        </linearGradient>
+
+                        <!-- Glowing Cyan Accents -->
+                        <linearGradient id="robotCyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#67e8f9"/>
+                            <stop offset="100%" stop-color="#06b6d4"/>
+                        </linearGradient>
+
+                        <!-- Cyan Eye Radial -->
+                        <radialGradient id="robotEyeGlow" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#a5f3fc"/>
+                            <stop offset="55%" stop-color="#22d3ee"/>
+                            <stop offset="100%" stop-color="#0891b2"/>
+                        </radialGradient>
+
+                        <!-- Soft Ground Shadow -->
+                        <radialGradient id="robotShadowGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#000000" stop-opacity="0.45"/>
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Ground Levitation Shadow -->
+                    <ellipse class="robot-ground-shadow" cx="50" cy="102" rx="22" ry="4" fill="url(#robotShadowGrad)"/>
+
+                    <!-- Floating Robot Group -->
+                    <g class="robot-character">
+                        <!-- Levitation Thruster / Energy Glow -->
+                        <ellipse cx="50" cy="85" rx="14" ry="4" fill="#22d3ee" class="robot-thruster-aura"/>
+                        <ellipse cx="50" cy="84" rx="8" ry="2.5" fill="#a5f3fc" class="robot-thruster-core"/>
+
+                        <!-- Left Arm -->
+                        <g class="robot-arm robot-arm-left">
+                            <rect x="17" y="56" width="9" height="18" rx="4.5" fill="url(#robotBodyGrad)" transform="rotate(16 21 65)"/>
+                            <circle cx="18" cy="72" r="3" fill="#22d3ee" opacity="0.9"/>
+                        </g>
+
+                        <!-- Right Arm -->
+                        <g class="robot-arm robot-arm-right">
+                            <rect x="74" y="56" width="9" height="18" rx="4.5" fill="url(#robotBodyGrad)" transform="rotate(-18 78 65)"/>
+                            <circle cx="82" cy="72" r="3" fill="#22d3ee" opacity="0.9"/>
+                        </g>
+
+                        <!-- Body / Torso -->
+                        <rect x="29" y="52" width="42" height="32" rx="16" fill="url(#robotBodyGrad)" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/>
+                        <!-- Torso 3D Bottom Shade -->
+                        <path d="M 32 72 Q 50 86 68 72 A 16 16 0 0 1 32 72 Z" fill="#94a3b8" opacity="0.35"/>
+
+                        <!-- Chest Terminal Emblem / Power Core -->
+                        <circle cx="50" cy="67" r="8.5" fill="#090e1a" stroke="#22d3ee" stroke-width="1.2" class="robot-chest-ring"/>
+                        <circle cx="50" cy="67" r="6" fill="#0f172a"/>
+                        <!-- Glowing Terminal Prompt ">_" on Chest -->
+                        <path d="M 46.5 64.5 L 49.5 67 L 46.5 69.5" fill="none" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="51.5" y1="69.5" x2="54" y2="69.5" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round"/>
+
+                        <!-- Neck Joint -->
+                        <rect x="44" y="47" width="12" height="6" rx="2" fill="url(#robotMetalGrad)"/>
+
+                        <!-- Antenna Stem -->
+                        <line x1="50" y1="12" x2="50" y2="20" stroke="url(#robotMetalGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Glowing Antenna Orb -->
+                        <circle cx="50" cy="10" r="4.5" fill="url(#robotCyanGlow)" class="robot-antenna-orb"/>
+                        <circle cx="49" cy="8.5" r="1.5" fill="#ffffff" opacity="0.8"/>
+
+                        <!-- Side Sensor Ears -->
+                        <rect x="19" y="27" width="6" height="12" rx="3" fill="url(#robotMetalGrad)"/>
+                        <circle cx="21" cy="33" r="2.5" fill="#22d3ee" class="robot-ear-light"/>
+                        
+                        <rect x="75" y="27" width="6" height="12" rx="3" fill="url(#robotMetalGrad)"/>
+                        <circle cx="79" cy="33" r="2.5" fill="#22d3ee" class="robot-ear-light"/>
+
+                        <!-- Head Dome -->
+                        <rect x="23" y="18" width="54" height="33" rx="16.5" fill="url(#robotBodyGrad)" stroke="rgba(255,255,255,0.7)" stroke-width="0.8"/>
+                        <!-- Head 3D Specular Highlight -->
+                        <ellipse cx="44" cy="22" rx="16" ry="3.5" fill="#ffffff" opacity="0.75"/>
+
+                        <!-- Visor / Faceplate -->
+                        <rect x="28" y="24" width="44" height="21" rx="10.5" fill="url(#robotVisorGrad)" stroke="#1e293b" stroke-width="1"/>
+                        
+                        <!-- Curved Glass Specular Highlight on Visor -->
+                        <path d="M 31 28 Q 50 25 67 30 Q 64 26 50 25 Q 36 25 31 28 Z" fill="url(#robotGlassSheen)"/>
+
+                        <!-- Expressive Glowing Cyan Visor Eyes -->
+                        <g class="robot-eyes">
+                            <ellipse class="robot-eye robot-eye-left" cx="42" cy="34" rx="4.5" ry="5.5" fill="url(#robotEyeGlow)"/>
+                            <ellipse cx="40.5" cy="32" rx="1.5" ry="1.8" fill="#ffffff" opacity="0.9"/>
+                            
+                            <ellipse class="robot-eye robot-eye-right" cx="58" cy="34" rx="4.5" ry="5.5" fill="url(#robotEyeGlow)"/>
+                            <ellipse cx="56.5" cy="32" rx="1.5" ry="1.8" fill="#ffffff" opacity="0.9"/>
+                        </g>
+
+                        <!-- Cute Cheeks -->
+                        <circle cx="34" cy="39" r="2" fill="#22d3ee" opacity="0.45"/>
+                        <circle cx="66" cy="39" r="2" fill="#22d3ee" opacity="0.45"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="robot-tooltip" role="tooltip">
+                <span class="robot-tooltip-text">Open Developer Terminal</span>
+                <span class="robot-tooltip-kbd">Ctrl + ~</span>
+            </span>
         `;
         document.body.appendChild(triggerBtn);
 
