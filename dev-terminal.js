@@ -1,33 +1,97 @@
 /**
  * ====================================================================
  * HARI SATYA SAI PUVVALA — INTERACTIVE DEVELOPER TERMINAL
- * Modular CLI Engine with Genuine Project Data & Keyboard Navigation
+ * Fully Verified Information, Safe Formatting & Keyboard Navigation
  * ====================================================================
  */
 
 (function () {
     'use strict';
 
-    // 1. GENUINE PROFILE DATA (From Existing Portfolio)
+    // 1. CONFIRMED & VERIFIED PROFILE DATA (Direct from portfolio codebase)
     const PROFILE = {
         name: 'Hari Satya Sai Puvvala',
         role: 'Full Stack Java Developer',
-        location: 'Kakinada, Andhra Pradesh, India (Open to Relocation)',
-        email: 'puvvalahari99@gmail.com',
-        phone: '+91 9392496294',
+        degree: 'Bachelor of Technology in Computer Science and Technology',
+        period: '2022 — 2026',
+        college: 'Swarnandhra College of Engineering and Technology (SCET)',
+        location: 'West Godavari, Andhra Pradesh, India (Open to Relocation across India)',
+        cgpa: '8.25 / 10.0',
+        email: 'haripuvvala7924@gmail.com',
+        phone: '+91 7989856745',
         github: 'https://github.com/Hari-CodeTech',
-        linkedin: 'https://www.linkedin.com/in/hari-satya-sai-puvvala-8521a0292/',
-        education: 'B.Tech in Computer Science and Engineering (Artificial Intelligence and Machine Learning) — Aditya College of Engineering & Technology (CGPA: 8.01)',
-        summary: 'Full Stack Java Developer skilled in Java, Spring Boot, MySQL, REST APIs, Hibernate, and Modern Web Applications with certified hands-on internship experience at Edunet & Techsaksham.'
+        linkedin: 'https://www.linkedin.com/in/hari-satya-sai-puvvala-07b007341/',
+        summary: 'Full Stack Java Developer specializing in Core Java, Spring Boot, MySQL, REST APIs, and Hibernate. Experienced in developing 3NF relational schemas, scalable REST endpoints, and responsive web applications through full-stack training at Codegnan IT Solutions and enterprise internship experience at EVONSYS INDIA.'
     };
 
+    // 2. VERIFIED SKILLS (Structured into the 5 requested categories)
     const SKILLS = {
-        'Core Backend': ['Java (OOP, Collections, Streams, Exception Handling)', 'Spring Boot (REST APIs, JPA, Dependency Injection)', 'Hibernate ORM', 'JDBC', 'MySQL (3NF Normalization, Indexing)'],
-        'Frontend & UI': ['JavaScript (ES6+)', 'React.js', 'HTML5', 'CSS3', 'Responsive Design'],
-        'Tools & Systems': ['Git & GitHub', 'VS Code', 'Eclipse', 'MySQL Workbench', 'Postman', 'Vercel Deployment'],
-        'AI & Emerging': ['Artificial Intelligence', 'Natural Language Processing (NLP)', 'Prompt Engineering', 'Deep Learning Basics']
+        'Core Java and Backend': [
+            'Core Java (OOP, Collections Framework, Multithreading, Exception Handling, Streams)',
+            'Advanced Java (JDBC, Servlets, JSP)',
+            'Spring Framework & Spring Boot (RESTful Web Services, Dependency Injection, Spring Data JPA)',
+            'Hibernate ORM & Clean Backend Architecture'
+        ],
+        'Database Technologies': [
+            'MySQL (Relational Database Management - RDBMS)',
+            'Schema Normalization (3NF)',
+            'B-Tree Indexing & Query Optimization',
+            'Complex Multi-Table JOINs & Foreign Key Integrity'
+        ],
+        'Frontend Technologies': [
+            'HTML5 & Semantic Markup',
+            'CSS3 & Modern Responsive Design',
+            'JavaScript (ES6+)',
+            'React.js',
+            'Bootstrap'
+        ],
+        'Developer Tools': [
+            'Git & GitHub (Version Control)',
+            'Eclipse IDE',
+            'Visual Studio Code',
+            'Postman (REST API Testing)',
+            'MySQL Workbench'
+        ],
+        'AI and Emerging Technologies': [
+            'AI-Powered Digital Transformation',
+            'Natural Language Processing (NLP) Fundamentals',
+            'Prompt Engineering',
+            'SDLC & Automated Testing Fundamentals'
+        ]
     };
 
+    // 3. VERIFIED EXPERIENCE & TRAINING (Direct from index.html)
+    const EXPERIENCES = [
+        {
+            role: 'Java Full Stack Trainee',
+            company: 'Codegnan IT Solutions',
+            period: 'Jun 2026 – Present',
+            bullets: [
+                'Undergoing hands-on training in Java Full Stack Development, focusing on Core Java, Advanced Java, Spring Boot, and Hibernate.',
+                'Gaining practical experience in HTML, CSS, JavaScript, React/Angular, MySQL, and real-world project development.',
+                'Participating in code reviews, technical assessments, and software architecture workshops for scalable backend services.'
+            ],
+            tags: ['Core Java', 'Advanced Java', 'Spring Boot', 'Hibernate', 'MySQL', 'React.js', 'REST APIs']
+        },
+        {
+            role: 'Java Intern',
+            company: 'EVONSYS INDIA Pvt. Ltd.',
+            period: 'Jan 2026 – May 2026',
+            bullets: [
+                'Completed an internship at EvonSys, gaining exposure to Core Java, Pega, Business Process Automation (BPA), and low-code application development in an enterprise environment.',
+                'Developed an understanding of AI-powered digital transformation, professional communication, SDLC, debugging, and version control using Git/GitHub.'
+            ],
+            tags: ['Core Java', 'Pega', 'Business Process Automation (BPA)', 'Low-code Development', 'Git/GitHub', 'SDLC']
+        }
+    ];
+
+    const CERTIFICATIONS = [
+        { title: 'ServiceNow Certified Application Developer (CAD)', issuer: 'ServiceNow', date: 'Nov 2025' },
+        { title: 'Java Full Stack Development Virtual Internship', issuer: 'AICTE and Edu Skills', date: '2024' },
+        { title: 'AWS Data Engineering Virtual Internship', issuer: 'AICTE and Edu Skills', date: '2024' }
+    ];
+
+    // 4. VERIFIED PROJECTS (From existing portfolio)
     const PROJECTS = [
         {
             name: 'JobTrack – Application & Recruitment Management System',
@@ -55,45 +119,53 @@
         },
         {
             name: 'Personal Portfolio (Current Site)',
-            stack: 'HTML5, CSS3, JavaScript (ES6+), Canvas Physics, Responsive CSS',
+            stack: 'HTML5, CSS3 Variables, JavaScript (ES6+), Canvas Physics, Dark/Light Mode',
             desc: 'Cinematic developer portfolio with interactive canvas constellation, 3D technology orbit, and accessibility-first dark/light modes.',
             github: 'https://github.com/Hari-CodeTech/hari-satya-sai-portfolio'
+        },
+        {
+            name: 'SwiftRide – Ride Booking & Fleet Management System',
+            stack: 'Core Java, OOP, Collections, Exception Handling, File I/O',
+            desc: 'Core Java backend system simulating on-demand ride dispatch, dynamic fare calculation, and driver-rider state machines.',
+            github: 'https://github.com/Hari-CodeTech/SwiftRide-Java-Project'
         }
     ];
 
     const COMMANDS = {
         'help': 'Display list of all available commands',
-        'about': 'View Hari\'s background, focus, and credentials',
-        'skills': 'Display categorized technical skill set',
+        'about': 'View Hari\'s verified academic degree, college, CGPA, and summary',
+        'skills': 'Display categorized technical skill set (Java, DB, Frontend, Tools, AI)',
+        'exp': 'View confirmed internship experience at Codegnan & EvonSys',
         'projects': 'List genuine software projects with descriptions & GitHub links',
-        'exp': 'View real internship and technical training experience',
         'arch': 'Launch the Spring Boot 3-Tier Enterprise Architecture Explorer',
         'quiz': 'Launch the Java JVM Code Output Challenge',
-        'contact': 'Display contact information, LinkedIn, and GitHub links',
+        'contact': 'Display confirmed email, phone number, LinkedIn, and GitHub links',
         'resume': 'Download Hari\'s official Java Developer resume',
         'theme': 'Toggle between Dark Mode and Light Mode',
         'clear': 'Clear the terminal output history',
-        'sudo': 'Execute with administrator privileges (e.g., sudo hire hari)',
-        'matrix': 'Trigger terminal cinematic code matrix',
+        'sudo': 'Developer Easter Egg command (e.g., sudo hire hari)',
+        'matrix': 'Trigger optional 3.5-second cinematic code animation (press ESC to stop)',
         'exit': 'Close the terminal window'
     };
 
-    // 2. DOM ELEMENTS
+    // 5. DOM ELEMENTS & STATE
     let overlay = null;
     let terminalBody = null;
     let inputEl = null;
     let triggerBtn = null;
     let history = [];
     let historyIndex = -1;
+    let matrixTimer = null;
+    let isMatrixRunning = false;
 
-    // 3. INITIALIZE TERMINAL COMPONENT
+    // 6. INITIALIZATION
     function initTerminal() {
         createTerminalMarkup();
         bindEvents();
     }
 
     function createTerminalMarkup() {
-        // Create Floating Trigger Button
+        // Floating Trigger Button
         triggerBtn = document.createElement('button');
         triggerBtn.className = 'dev-terminal-trigger';
         triggerBtn.id = 'devTerminalTrigger';
@@ -107,7 +179,7 @@
         `;
         document.body.appendChild(triggerBtn);
 
-        // Create Terminal Modal Overlay
+        // Terminal Modal Overlay
         overlay = document.createElement('div');
         overlay.className = 'terminal-modal-overlay';
         overlay.id = 'terminalModalOverlay';
@@ -135,11 +207,11 @@
 │  Full Stack Java Developer • Spring Boot • MySQL • AI   │
 └────────────────────────────────────────────────────────┘</div>
                     <div class="term-welcome">
-                        Welcome to the interactive terminal! Type <span class="term-cyan">help</span> to view commands.<br>
-                        Quick actions: <span class="term-cyan">skills</span>, <span class="term-cyan">projects</span>, <span class="term-cyan">arch</span>, <span class="term-cyan">quiz</span>, <span class="term-cyan">contact</span>
+                        Welcome! Type <span class="term-cyan">help</span> to view all commands.<br>
+                        Quick explore: <span class="term-cyan">about</span>, <span class="term-cyan">skills</span>, <span class="term-cyan">exp</span>, <span class="term-cyan">projects</span>, <span class="term-cyan">contact</span>, <span class="term-cyan">arch</span>, <span class="term-cyan">quiz</span>
                     </div>
                     <div id="termOutput"></div>
-                    <div class="terminal-input-row">
+                    <div class="terminal-input-row" id="termInputRow">
                         <span class="term-prompt">hari@portfolio:~$</span>
                         <input type="text" class="terminal-input" id="termInput" autocomplete="off" spellcheck="false" aria-label="Terminal command prompt">
                     </div>
@@ -154,16 +226,13 @@
     }
 
     function bindEvents() {
-        // Open trigger click
         triggerBtn.addEventListener('click', openTerminal);
 
-        // Close buttons click
         const closeBtn = document.getElementById('termCloseBtn');
         const dotClose = document.getElementById('termDotClose');
         if (closeBtn) closeBtn.addEventListener('click', closeTerminal);
         if (dotClose) dotClose.addEventListener('click', closeTerminal);
 
-        // Close on clicking backdrop
         overlay.addEventListener('click', function (e) {
             if (e.target === overlay) {
                 closeTerminal();
@@ -175,8 +244,12 @@
             if (e.ctrlKey && (e.key === '`' || e.key === '~')) {
                 e.preventDefault();
                 toggleTerminal();
-            } else if (e.key === 'Escape' && overlay.classList.contains('active')) {
-                closeTerminal();
+            } else if (e.key === 'Escape') {
+                if (isMatrixRunning) {
+                    stopMatrixAnimation();
+                } else if (overlay.classList.contains('active')) {
+                    closeTerminal();
+                }
             }
         });
 
@@ -212,9 +285,10 @@
             }
         });
 
-        // Clicking anywhere in the terminal body refocuses input
         terminalBody.addEventListener('click', function () {
-            inputEl.focus();
+            if (!isMatrixRunning) {
+                inputEl.focus();
+            }
         });
     }
 
@@ -227,6 +301,9 @@
     }
 
     function closeTerminal() {
+        if (isMatrixRunning) {
+            stopMatrixAnimation();
+        }
         overlay.classList.remove('active');
         document.body.style.overflow = '';
         triggerBtn.focus();
@@ -240,15 +317,16 @@
         }
     }
 
-    // 4. COMMAND EXECUTION ENGINE
+    // 7. COMMAND EXECUTION ENGINE (Strictly Safe & Verified)
     function executeCommand(rawInput) {
         const outputDiv = document.getElementById('termOutput');
         if (!outputDiv) return;
 
-        // Render prompt echo
+        // Clean & sanitize input echo
+        const sanitizedInput = escapeHtml(rawInput);
         const echoRow = document.createElement('div');
         echoRow.className = 'term-command-row';
-        echoRow.innerHTML = `<span class="term-prompt">hari@portfolio:~$</span> <span class="term-cmd-text">${escapeHtml(rawInput)}</span>`;
+        echoRow.innerHTML = `<span class="term-prompt">hari@portfolio:~$</span> <span class="term-cmd-text">${sanitizedInput}</span>`;
         outputDiv.appendChild(echoRow);
 
         const trimmed = rawInput.trim();
@@ -271,26 +349,48 @@
                             <div class="term-table-desc">${COMMANDS[c]}</div>
                         `).join('')}
                     </div>
-                    <div class="term-line term-muted">Tip: Use Tab for auto-completion and Arrow Up/Down for command history.</div>
+                    <div class="term-line term-muted">Tips: Tab for auto-complete • Arrow Up/Down for command history • ESC to close.</div>
                 `;
                 break;
 
             case 'about':
                 responseHtml = `
                     <div class="term-line"><span class="term-cyan">👤 ${PROFILE.name}</span> — <span class="term-purple">${PROFILE.role}</span></div>
+                    <div class="term-line"><span class="term-muted">🎓 Degree:</span> ${PROFILE.degree} (${PROFILE.period})</div>
+                    <div class="term-line"><span class="term-muted">🏛️ College:</span> ${PROFILE.college}</div>
+                    <div class="term-line"><span class="term-muted">📊 CGPA:</span> <span class="term-green">${PROFILE.cgpa}</span></div>
                     <div class="term-line"><span class="term-muted">📍 Location:</span> ${PROFILE.location}</div>
-                    <div class="term-line"><span class="term-muted">🎓 Education:</span> ${PROFILE.education}</div>
-                    <div class="term-line" style="margin-top: 6px;">${PROFILE.summary}</div>
+                    <div class="term-line" style="margin-top: 8px; line-height: 1.6;">${PROFILE.summary}</div>
                 `;
                 break;
 
             case 'skills':
                 responseHtml = `
-                    <div class="term-line"><span class="term-cyan">⚡ Technical Skills & Core Competencies:</span></div>
+                    <div class="term-line"><span class="term-cyan">⚡ Verified Technical Skills:</span></div>
                     ${Object.keys(SKILLS).map(cat => `
-                        <div class="term-line" style="margin-top: 6px;">
+                        <div class="term-line" style="margin-top: 8px;">
                             <span class="term-yellow">${cat}:</span><br>
-                            &nbsp;&nbsp;${SKILLS[cat].join(' • ')}
+                            ${SKILLS[cat].map(s => `&nbsp;&nbsp;• ${s}`).join('<br>')}
+                        </div>
+                    `).join('')}
+                `;
+                break;
+
+            case 'exp':
+            case 'experience':
+                responseHtml = `
+                    <div class="term-line"><span class="term-cyan">💼 Confirmed Professional Experience & Training:</span></div>
+                    ${EXPERIENCES.map((exp, idx) => `
+                        <div class="term-line" style="margin-top: 10px;">
+                            <span class="term-green">${idx + 1}. ${exp.role}</span> — <span class="term-purple">${exp.company}</span> <span class="term-muted">(${exp.period})</span><br>
+                            ${exp.bullets.map(b => `&nbsp;&nbsp;• ${b}`).join('<br>')}<br>
+                            &nbsp;&nbsp;<span class="term-muted">Technologies:</span> <span class="term-cyan">${exp.tags.join(' • ')}</span>
+                        </div>
+                    `).join('')}
+                    <div class="term-line" style="margin-top: 14px;"><span class="term-cyan">📜 Certifications & Virtual Internships:</span></div>
+                    ${CERTIFICATIONS.map(c => `
+                        <div class="term-line" style="margin-top: 4px;">
+                            &nbsp;&nbsp;• <span class="term-yellow">${c.title}</span> — <span class="term-muted">${c.issuer} (${c.date})</span>
                         </div>
                     `).join('')}
                 `;
@@ -302,113 +402,102 @@
                     ${PROJECTS.map((p, idx) => `
                         <div class="term-line" style="margin-top: 8px;">
                             <span class="term-green">${idx + 1}. ${p.name}</span><br>
-                            &nbsp;&nbsp;<span class="term-muted">Stack:</span> ${p.stack}<br>
-                            &nbsp;&nbsp;<span class="term-muted">Overview:</span> ${p.desc}
-                            ${p.github ? `<br>&nbsp;&nbsp;<a href="${p.github}" target="_blank" rel="noopener noreferrer" style="color: #22d3ee; text-decoration: underline;">GitHub Repository ↗</a>` : ''}
+                            &nbsp;&nbsp;<span class="term-muted">Tech Stack:</span> ${p.stack}<br>
+                            &nbsp;&nbsp;<span class="term-muted">Summary:</span> ${p.desc}
+                            ${p.github ? `<br>&nbsp;&nbsp;<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="term-link">View GitHub Repository ↗</a>` : ''}
                         </div>
                     `).join('')}
                 `;
                 break;
 
-            case 'exp':
-            case 'experience':
+            case 'contact':
                 responseHtml = `
-                    <div class="term-line"><span class="term-cyan">💼 Verified Experience & Internships:</span></div>
-                    <div class="term-line" style="margin-top: 6px;">
-                        <span class="term-green">1. Artificial Intelligence Intern — Edunet Foundation</span> <span class="term-muted">(Jun 2024 – Jul 2024)</span><br>
-                        &nbsp;&nbsp;• Developed AI and Computer Vision pipelines utilizing OpenCV, Python, and Deep Learning.<br>
-                        &nbsp;&nbsp;• Built an automated eye-blink & drowsiness detection system improving road safety monitoring.
-                    </div>
-                    <div class="term-line" style="margin-top: 8px;">
-                        <span class="term-green">2. AI & Cloud Technologies Intern — Techsaksham (Microsoft & SAP)</span> <span class="term-muted">(Jan 2024 – Apr 2024)</span><br>
-                        &nbsp;&nbsp;• Practical engineering in Machine Learning algorithms, predictive analytics, and enterprise cloud solutions.
-                    </div>
+                    <div class="term-line"><span class="term-cyan">📬 Direct Contact Information:</span></div>
+                    <div class="term-line">• Email: <a href="mailto:${PROFILE.email}" class="term-link">${PROFILE.email}</a></div>
+                    <div class="term-line">• Mobile Phone: <a href="tel:${PROFILE.phone}" style="color: #4ade80; text-decoration: none;">${PROFILE.phone}</a></div>
+                    <div class="term-line">• LinkedIn Profile: <a href="${PROFILE.linkedin}" target="_blank" rel="noopener noreferrer" class="term-link">linkedin.com/in/hari-satya-sai-puvvala-07b007341/ ↗</a></div>
+                    <div class="term-line">• GitHub Profile: <a href="${PROFILE.github}" target="_blank" rel="noopener noreferrer" class="term-link">github.com/Hari-CodeTech ↗</a></div>
+                    <div class="term-line">• Location Preference: <span class="term-green">${PROFILE.location}</span></div>
                 `;
+                break;
+
+            case 'sudo':
+                if (args === 'hire hari' || args === 'hire' || args === 'hire hari!') {
+                    responseHtml = `
+                        <div class="term-line term-green">[SUCCESS] Developer Easter Egg Unlocked!</div>
+                        <div class="term-line">You've discovered Hari's hiring command.</div>
+                        <div class="term-line" style="margin-top: 4px;">
+                            ☕ <span class="term-cyan">Java</span> + <span class="term-purple">Spring Boot</span> + <span class="term-yellow">MySQL</span> + a passion for building useful software.
+                        </div>
+                        <div class="term-line" style="margin-top: 6px;">Think we could build something together?</div>
+                        <div class="term-line">Contact: <a href="mailto:${PROFILE.email}" class="term-link">${PROFILE.email}</a> | <a href="tel:${PROFILE.phone}" style="color: #4ade80;">${PROFILE.phone}</a></div>
+                    `;
+                } else {
+                    responseHtml = `<div class="term-line term-yellow">sudo: ${escapeHtml(args || 'command')} not found. Try: <span class="term-cyan">sudo hire hari</span></div>`;
+                }
+                break;
+
+            case 'matrix':
+                responseHtml = `
+                    <div class="term-matrix-status">⚡ Running Matrix cascade (duration: 3.5s • press ESC to stop early)...</div>
+                `;
+                triggerMatrixEffect();
                 break;
 
             case 'arch':
             case 'architecture':
                 responseHtml = `
-                    <div class="term-line"><span class="term-cyan">🏛️ Spring Boot 3-Tier Enterprise Architecture Explorer</span></div>
-                    <div class="term-line">Opening interactive architecture simulation...</div>
+                    <div class="term-line"><span class="term-cyan">🏛️ Opening Spring Boot 3-Tier Enterprise Architecture Explorer...</span></div>
                 `;
                 setTimeout(function () {
                     if (window.openArchitectureExplorer) {
                         closeTerminal();
                         window.openArchitectureExplorer();
                     }
-                }, 400);
+                }, 350);
                 break;
 
             case 'quiz':
             case 'challenge':
                 responseHtml = `
-                    <div class="term-line"><span class="term-cyan">☕ Java JVM Code Output Challenge</span></div>
-                    <div class="term-line">Launching Java technical interview challenge...</div>
+                    <div class="term-line"><span class="term-cyan">☕ Launching Java JVM Code Output Challenge...</span></div>
                 `;
                 setTimeout(function () {
                     if (window.openJavaQuiz) {
                         closeTerminal();
                         window.openJavaQuiz();
                     }
-                }, 400);
-                break;
-
-            case 'contact':
-                responseHtml = `
-                    <div class="term-line"><span class="term-cyan">📬 Connect with Hari:</span></div>
-                    <div class="term-line">• Email: <a href="mailto:${PROFILE.email}" style="color: #22d3ee;">${PROFILE.email}</a></div>
-                    <div class="term-line">• Phone: <span class="term-green">${PROFILE.phone}</span></div>
-                    <div class="term-line">• LinkedIn: <a href="${PROFILE.linkedin}" target="_blank" rel="noopener noreferrer" style="color: #22d3ee;">linkedin.com/in/hari-satya-sai-puvvala ↗</a></div>
-                    <div class="term-line">• GitHub: <a href="${PROFILE.github}" target="_blank" rel="noopener noreferrer" style="color: #22d3ee;">github.com/Hari-CodeTech ↗</a></div>
-                `;
+                }, 350);
                 break;
 
             case 'resume':
                 responseHtml = `<div class="term-line term-green">Downloading Hari_Java_Resume_compressed.pdf...</div>`;
-                const link = document.createElement('a');
-                link.href = 'assets/Hari_Java_Resume_compressed.pdf';
-                link.download = 'Hari_Java_Resume_compressed.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                const dlLink = document.createElement('a');
+                dlLink.href = 'assets/Hari_Java_Resume_compressed.pdf';
+                dlLink.download = 'Hari_Java_Resume_compressed.pdf';
+                document.body.appendChild(dlLink);
+                dlLink.click();
+                document.body.removeChild(dlLink);
                 break;
 
             case 'theme':
                 const themeBtn = document.getElementById('themeToggle');
                 if (themeBtn) {
                     themeBtn.click();
-                    const newTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = document.documentElement.getAttribute('data-theme') || 'dark';
                     responseHtml = `<div class="term-line term-green">Theme switched to <span class="term-cyan">${newTheme.toUpperCase()}</span> mode.</div>`;
                 } else {
-                    responseHtml = `<div class="term-line term-muted">Theme toggle button not found.</div>`;
+                    responseHtml = `<div class="term-line term-muted">Theme toggle button not available.</div>`;
                 }
                 break;
 
             case 'clear':
             case 'cls':
+                if (isMatrixRunning) {
+                    stopMatrixAnimation();
+                }
                 outputDiv.innerHTML = '';
                 return;
-
-            case 'sudo':
-                if (args === 'hire hari' || args === 'hire' || args === 'hire hari!') {
-                    responseHtml = `
-                        <div class="term-line term-green">
-                            [SUCCESS] Authorization Verified: Recruiter / Technical Lead Privileges Detected!<br>
-                            ──────────────────────────────────────────────────────────<br>
-                            🎉 <strong>Fantastic decision!</strong> Hari brings solid Java backend mechanics, Spring Boot REST architecture, MySQL normalization, and positive team energy.<br>
-                            Ready to interview? Email directly at: <a href="mailto:puvvalahari99@gmail.com" style="color: #22d3ee; font-weight: bold;">puvvalahari99@gmail.com</a> or call <span class="term-yellow">+91 9392496294</span>.
-                        </div>
-                    `;
-                } else {
-                    responseHtml = `<div class="term-line term-yellow">sudo: ${escapeHtml(args || 'command')} not found or access denied. Try: <span class="term-cyan">sudo hire hari</span></div>`;
-                }
-                break;
-
-            case 'matrix':
-                responseHtml = `<div class="term-line term-green">Wake up, Neo... The Matrix has you. Follow the white rabbit. 🐇</div>`;
-                triggerMatrixEffect();
-                break;
 
             case 'exit':
             case 'close':
@@ -428,7 +517,6 @@
             outputDiv.appendChild(resEl);
         }
 
-        // Scroll to bottom
         terminalBody.scrollTop = terminalBody.scrollHeight;
     }
 
@@ -443,34 +531,80 @@
         }
     }
 
+    // 8. CONTROLLED MATRIX ANIMATION (3.5 Seconds, Limited DOM, Clean Shutdown)
     function triggerMatrixEffect() {
+        if (isMatrixRunning) return;
+        isMatrixRunning = true;
+
         const outputDiv = document.getElementById('termOutput');
         if (!outputDiv) return;
 
-        let count = 0;
-        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
-        const interval = setInterval(function () {
+        const inputRow = document.getElementById('termInputRow');
+        if (inputRow) inputRow.style.opacity = '0.5';
+
+        const matrixContainer = document.createElement('div');
+        matrixContainer.id = 'termMatrixContainer';
+        matrixContainer.style.margin = '4px 0 10px';
+        outputDiv.appendChild(matrixContainer);
+
+        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*+-=<>{}[]';
+        let lineCount = 0;
+        const maxLines = 18; // strictly bounded
+        const intervalDuration = 180; // 180ms * 18 = 3.24 seconds total
+
+        matrixTimer = setInterval(function () {
+            if (lineCount >= maxLines || !isMatrixRunning) {
+                stopMatrixAnimation();
+                return;
+            }
+
             let line = '';
-            for (let i = 0; i < 40; i++) {
+            const lineLen = Math.min(38, Math.floor(terminalBody.clientWidth / 14));
+            for (let i = 0; i < lineLen; i++) {
                 line += chars.charAt(Math.floor(Math.random() * chars.length));
             }
-            const el = document.createElement('div');
-            el.className = 'term-line';
-            el.style.color = '#22c55e';
-            el.style.fontFamily = 'monospace';
-            el.style.opacity = '0.9';
-            el.textContent = line;
-            outputDiv.appendChild(el);
-            terminalBody.scrollTop = terminalBody.scrollHeight;
 
-            count++;
-            if (count > 18) {
-                clearInterval(interval);
-            }
-        }, 60);
+            const lineEl = document.createElement('div');
+            lineEl.className = 'term-line';
+            lineEl.style.color = lineCount % 2 === 0 ? '#4ade80' : '#22c55e';
+            lineEl.style.fontFamily = 'monospace';
+            lineEl.style.fontSize = '0.82rem';
+            lineEl.style.letterSpacing = '1px';
+            lineEl.textContent = line;
+            matrixContainer.appendChild(lineEl);
+
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+            lineCount++;
+        }, intervalDuration);
+    }
+
+    function stopMatrixAnimation() {
+        if (matrixTimer) {
+            clearInterval(matrixTimer);
+            matrixTimer = null;
+        }
+        isMatrixRunning = false;
+
+        const inputRow = document.getElementById('termInputRow');
+        if (inputRow) inputRow.style.opacity = '1';
+
+        const outputDiv = document.getElementById('termOutput');
+        if (outputDiv) {
+            const endNote = document.createElement('div');
+            endNote.className = 'term-line term-muted';
+            endNote.style.marginTop = '4px';
+            endNote.textContent = '[Matrix sequence terminated. Ready for next command.]';
+            outputDiv.appendChild(endNote);
+        }
+
+        if (inputEl) {
+            inputEl.focus();
+        }
+        terminalBody.scrollTop = terminalBody.scrollHeight;
     }
 
     function escapeHtml(str) {
+        if (!str) return '';
         return str
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
@@ -479,10 +613,9 @@
             .replace(/'/g, '&#039;');
     }
 
-    // Expose openTerminal globally so terminal can be invoked from other triggers if needed
+    // Expose openTerminal globally
     window.openDevTerminal = openTerminal;
 
-    // Initialize when DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initTerminal);
     } else {
