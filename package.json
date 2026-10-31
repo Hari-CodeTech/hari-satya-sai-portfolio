@@ -1,0 +1,12 @@
+{
+  "name": "hari-satya-sai-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Hari Satya Sai Puvvala - Full Stack Java Developer",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "serve": "npx serve . -l 3000"
+  },
+  "author": "Hari Satya Sai Puvvala",
+  "license": "ISC"
+}

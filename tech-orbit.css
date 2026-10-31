@@ -1,0 +1,472 @@
+/* =========================================================
+   ANIMATED TECHNOLOGY ORBIT SECTION
+   Inspired by Reference 3D Geometric Wireframe & Orbit System
+   Fully Scoped & Isolated Stylesheet
+========================================================= */
+
+.tech-orbit-section {
+    position: relative;
+    padding: 110px 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.85) 0%, rgba(7, 11, 23, 0.98) 70%, #070b17 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Container & Layout */
+.tech-orbit-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ambient Background: Subtle Perspective Grid & Glows */
+.tech-orbit-ambient {
+    position: absolute;
+    inset: -50px 0;
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tech-orbit-ambient .ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.tech-orbit-ambient .cyan-glow {
+    width: 480px;
+    height: 480px;
+    right: 15%;
+    top: 20%;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.35) 0%, rgba(34, 211, 238, 0) 70%);
+}
+
+.tech-orbit-ambient .purple-glow {
+    width: 520px;
+    height: 520px;
+    left: 15%;
+    top: 25%;
+    background: radial-gradient(circle, rgba(155, 92, 255, 0.32) 0%, rgba(155, 92, 255, 0) 70%);
+}
+
+/* Perspective Grid Floor (matching reference screenshots) */
+.tech-orbit-ambient .perspective-grid {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%) perspective(600px) rotateX(68deg);
+    width: min(100%, 1200px);
+    height: 500px;
+    background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(155, 92, 255, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 80%);
+    opacity: 0.75;
+}
+
+/* Faint Orbital Rings in Background */
+.tech-orbit-ambient .orbit-faint-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px dashed rgba(56, 189, 248, 0.18);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.tech-orbit-ambient .ring-1 {
+    width: 560px;
+    height: 560px;
+    border-color: rgba(56, 189, 248, 0.14);
+}
+
+.tech-orbit-ambient .ring-2 {
+    width: 720px;
+    height: 720px;
+    border-color: rgba(155, 92, 255, 0.12);
+}
+
+/* 3D Orbit Stage */
+.tech-orbit-stage {
+    position: relative;
+    width: 100%;
+    height: 640px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    touch-action: none;
+    cursor: grab;
+    z-index: 2;
+}
+
+.tech-orbit-stage:active {
+    cursor: grabbing;
+}
+
+/* HTML5 Canvas for Geodesic Wireframe, Glowing Nodes, and Micro-Particles */
+.tech-orbit-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Central Profile Photo Hub */
+.tech-orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.center-photo-ring {
+    position: relative;
+    width: 154px;
+    height: 154px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #9b5cff 100%);
+    box-shadow: 
+        0 0 25px rgba(34, 211, 238, 0.5),
+        0 0 60px rgba(155, 92, 255, 0.35),
+        0 14px 35px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.center-photo-ring:hover {
+    transform: scale(1.04);
+    box-shadow: 
+        0 0 35px rgba(34, 211, 238, 0.7),
+        0 0 80px rgba(155, 92, 255, 0.5),
+        0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+.center-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    background: #0a1024;
+    border: 3px solid #070b17;
+}
+
+/* Center Pulse Glow Animation */
+.center-pulse-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(34, 211, 238, 0.6);
+    animation: orbitCenterPulse 3s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes orbitCenterPulse {
+    0% {
+        transform: scale(0.96);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.12);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.22);
+        opacity: 0;
+    }
+}
+
+/* 3D Floating Technology Labels Container */
+.tech-orbit-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 12;
+}
+
+/* Floating Technology Label Pill */
+.orbit-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: var(--font-heading, 'Outfit', 'Inter', sans-serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    border-radius: 9999px;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 
+        0 10px 25px -4px rgba(0, 0, 0, 0.3),
+        0 4px 10px rgba(34, 211, 238, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+    transform-origin: center center;
+    transition: 
+        filter 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    will-change: transform, opacity;
+}
+
+/* Label when in the back of the 3D orbit (depth effect matching reference) */
+.orbit-label.is-background {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #cbd5e1;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Label Status Badge / Icon */
+.orbit-label-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #10b981;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.orbit-label-badge.ai-badge {
+    background: linear-gradient(135deg, #9b5cff, #38bdf8);
+    box-shadow: 0 0 10px rgba(155, 92, 255, 0.6);
+}
+
+.orbit-label-badge.core-badge {
+    background: #0ea5e9;
+    box-shadow: 0 0 8px rgba(14, 165, 233, 0.5);
+}
+
+/* Label Hover & Active Highlighting */
+.orbit-label:hover {
+    background: #ffffff !important;
+    color: #070b17 !important;
+    box-shadow: 
+        0 14px 30px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(34, 211, 238, 0.65),
+        inset 0 0 0 1.5px #22d3ee !important;
+    z-index: 50 !important;
+}
+
+.orbit-label.is-highlighted {
+    box-shadow: 
+        0 14px 35px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(155, 92, 255, 0.7),
+        inset 0 0 0 2px #a855f7 !important;
+}
+
+.orbit-label.is-dimmed {
+    opacity: 0.18 !important;
+    filter: grayscale(0.8) blur(0.5px);
+}
+
+/* Section Controls & Legend */
+.tech-orbit-controls {
+    position: relative;
+    z-index: 15;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.orbit-badges-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.orbit-filter-btn {
+    appearance: none;
+    background: rgba(16, 25, 46, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-muted, #94a3b8);
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.orbit-filter-btn:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+    color: var(--text-bright, #ffffff);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.15);
+}
+
+.orbit-filter-btn.active {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(155, 92, 255, 0.25) 100%);
+    border-color: rgba(34, 211, 238, 0.6);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+}
+
+.orbit-hint {
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: 0.75rem;
+    color: var(--text-subtle, #64748b);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.orbit-hint .hint-icon {
+    color: var(--primary, #22d3ee);
+    font-size: 0.85rem;
+    animation: orbitHintTwinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes orbitHintTwinkle {
+    from { opacity: 0.4; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1.15); }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+========================================================= */
+
+@media (max-width: 992px) {
+    .tech-orbit-stage {
+        height: 560px;
+    }
+
+    .center-photo-ring {
+        width: 135px;
+        height: 135px;
+    }
+
+    .orbit-label {
+        font-size: 0.84rem;
+        padding: 7px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-orbit-section {
+        padding: 80px 0;
+    }
+
+    .tech-orbit-stage {
+        height: 500px;
+    }
+
+    .center-photo-ring {
+        width: 118px;
+        height: 118px;
+        padding: 4px;
+    }
+
+    .orbit-label {
+        font-size: 0.78rem;
+        padding: 6px 13px;
+        gap: 6px;
+    }
+
+    .orbit-label-badge {
+        width: 15px;
+        height: 15px;
+        font-size: 9px;
+    }
+
+    .tech-orbit-ambient .ring-1 {
+        width: 440px;
+        height: 440px;
+    }
+
+    .tech-orbit-ambient .ring-2 {
+        width: 560px;
+        height: 560px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-orbit-section {
+        padding: 65px 0;
+    }
+
+    .tech-orbit-stage {
+        height: 440px;
+    }
+
+    .center-photo-ring {
+        width: 100px;
+        height: 100px;
+        padding: 3px;
+    }
+
+    .orbit-label {
+        font-size: 0.72rem;
+        padding: 5px 11px;
+        gap: 4px;
+    }
+
+    .orbit-label-badge {
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+    }
+
+    .orbit-hint {
+        font-size: 0.7rem;
+        padding: 0 10px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    .center-pulse-ring,
+    .orbit-hint .hint-icon {
+        animation: none !important;
+    }
+
+    .orbit-label {
+        transition: none !important;
+    }
+}

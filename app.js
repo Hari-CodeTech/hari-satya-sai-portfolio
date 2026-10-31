@@ -934,6 +934,15 @@
                     document.body.style.overflow = '';
                 });
             });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 1024 && navLinks.classList.contains('nav-open')) {
+                    navLinks.classList.remove('nav-open');
+                    navMenuBtn.classList.remove('active');
+                    navMenuBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            });
         }
     }
 

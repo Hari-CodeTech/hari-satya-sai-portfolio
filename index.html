@@ -17,8 +17,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tech-orbit.css">
 </head>
 
 <body>
@@ -92,6 +93,10 @@
 
                 <!-- DESKTOP NAV -->
                 <div class="nav-links" id="navLinks">
+                    <div class="nav-drawer-status" title="Open to Relocation across India">
+                        <span class="status-dot"></span>
+                        <span>OPEN TO RELOCATION</span>
+                    </div>
                     <a href="#profile" class="nav-link active">Home</a>
                     <a href="#summary" class="nav-link">About</a>
                     <a href="#education" class="nav-link">Education</a>
@@ -470,6 +475,61 @@
                         </div>
                     </article>
 
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             2.5. ANIMATED TECHNOLOGY ORBIT
+        ====================================================== -->
+        <section id="tech-orbit" class="section tech-orbit-section" aria-label="Animated Technology Orbit">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-number">✦</span>
+                    <div>
+                        <p class="section-label">INTERACTIVE ECOSYSTEM</p>
+                        <h2>Technology & <span>Skill Orbit</span></h2>
+                    </div>
+                </div>
+
+                <div class="tech-orbit-wrapper reveal">
+                    <!-- Perspective Floor Grid & Ambient Glows -->
+                    <div class="tech-orbit-ambient" aria-hidden="true">
+                        <div class="ambient-glow cyan-glow"></div>
+                        <div class="ambient-glow purple-glow"></div>
+                        <div class="perspective-grid"></div>
+                        <div class="orbit-faint-ring ring-1"></div>
+                        <div class="orbit-faint-ring ring-2"></div>
+                    </div>
+
+                    <!-- 3D Orbit Stage -->
+                    <div class="tech-orbit-stage" id="tech-orbit-stage" role="img" aria-label="Interactive 3D Technology Orbit around Hari's profile photo">
+                        <!-- Canvas for 3D Geodesic Wireframe, Glowing Nodes, and Particles -->
+                        <canvas id="tech-orbit-canvas" class="tech-orbit-canvas"></canvas>
+
+                        <!-- Central Profile Photo Hub -->
+                        <div class="tech-orbit-center" id="tech-orbit-center">
+                            <div class="center-photo-ring">
+                                <img src="assets/profile.jpg?v=2" alt="Hari Satya Sai Puvvala" class="center-photo" width="160" height="160">
+                                <div class="center-pulse-ring"></div>
+                            </div>
+                        </div>
+
+                        <!-- 3D Floating Technology Labels -->
+                        <div class="tech-orbit-labels" id="tech-orbit-labels"></div>
+                    </div>
+
+                    <!-- Filter Controls & Legend -->
+                    <div class="tech-orbit-controls">
+                        <div class="orbit-badges-legend" role="group" aria-label="Filter technologies">
+                            <button type="button" class="orbit-filter-btn active" data-filter="all">All Technologies (13)</button>
+                            <button type="button" class="orbit-filter-btn" data-filter="primary">☕ Core & Backend (8)</button>
+                            <button type="button" class="orbit-filter-btn" data-filter="ai">🤖 AI & Intelligence (5)</button>
+                        </div>
+                        <p class="orbit-hint"><span class="hint-icon">✦</span> Drag or move cursor to rotate 3D wireframe • Hover badge to inspect</p>
+                    </div>
                 </div>
 
             </div>
@@ -1577,6 +1637,7 @@
 
     <!-- MAIN INTERACTION SCRIPT -->
     <script src="app.js"></script>
+    <script src="tech-orbit.js"></script>
 
 </body>
 
