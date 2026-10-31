@@ -105,6 +105,66 @@
     };
 
     // ====================================================================
+    // 1.5 THEME TOGGLE (DARK MODE / LIGHT MODE)
+    // ====================================================================
+    function initTheme() {
+        const themeToggle = document.getElementById('themeToggle');
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+        function updateToggleAccessibility(theme) {
+            if (!themeToggle) return;
+            const isLight = theme === 'light';
+            const nextMode = isLight ? 'dark' : 'light';
+            themeToggle.setAttribute('aria-label', `Switch to ${nextMode} mode`);
+            themeToggle.setAttribute('title', `Switch to ${nextMode} mode`);
+        }
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        updateToggleAccessibility(currentTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function () {
+                const current = document.documentElement.getAttribute('data-theme') || 'dark';
+                const next = current === 'dark' ? 'light' : 'dark';
+
+                // Smooth theme transition
+                document.documentElement.classList.add('theme-transition');
+                document.documentElement.setAttribute('data-theme', next);
+
+                try {
+                    localStorage.setItem('theme', next);
+                } catch (e) {
+                    console.warn('Unable to persist theme to localStorage', e);
+                }
+
+                if (metaThemeColor) {
+                    metaThemeColor.setAttribute('content', next === 'light' ? '#f8fafc' : '#070b17');
+                }
+
+                updateToggleAccessibility(next);
+
+                setTimeout(function () {
+                    document.documentElement.classList.remove('theme-transition');
+                }, 350);
+            });
+        }
+
+        // Listen for OS scheme changes if user has not set a manual preference
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+                if (!localStorage.getItem('theme')) {
+                    const osTheme = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', osTheme);
+                    if (metaThemeColor) {
+                        metaThemeColor.setAttribute('content', osTheme === 'light' ? '#f8fafc' : '#070b17');
+                    }
+                    updateToggleAccessibility(osTheme);
+                }
+            });
+        }
+    }
+
+    // ====================================================================
     // 2. HERO PARTICLE CONSTELLATION (HTML5 CANVAS)
     // ====================================================================
     function initHeroParticles() {
@@ -251,20 +311,21 @@
                 }
 
                 // Render particle dot
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                 if (p.colorType === 'cyan') {
-                    ctx.fillStyle = `rgba(34, 211, 238, ${p.baseAlpha})`;
-                    ctx.shadowColor = 'rgba(34, 211, 238, 0.6)';
+                    ctx.fillStyle = isLight ? `rgba(2, 132, 199, ${Math.min(1, p.baseAlpha * 1.3)})` : `rgba(34, 211, 238, ${p.baseAlpha})`;
+                    ctx.shadowColor = isLight ? 'rgba(2, 132, 199, 0.35)' : 'rgba(34, 211, 238, 0.6)';
                 } else {
-                    ctx.fillStyle = `rgba(155, 92, 255, ${p.baseAlpha})`;
-                    ctx.shadowColor = 'rgba(155, 92, 255, 0.6)';
+                    ctx.fillStyle = isLight ? `rgba(124, 58, 237, ${Math.min(1, p.baseAlpha * 1.3)})` : `rgba(155, 92, 255, ${p.baseAlpha})`;
+                    ctx.shadowColor = isLight ? 'rgba(124, 58, 237, 0.35)' : 'rgba(155, 92, 255, 0.6)';
                 }
                 ctx.shadowBlur = 6;
                 ctx.fill();
                 ctx.shadowBlur = 0;
 
-                // Connect nearby particles with thin glowing lines
+                // Connect nearby particles with thin lines
                 for (let j = i + 1; j < particles.length; j++) {
                     const p2 = particles[j];
                     const dx = p.x - p2.x;
@@ -272,11 +333,11 @@
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
                     if (dist < maxConnectDistance) {
-                        const alpha = (1 - dist / maxConnectDistance) * 0.18;
+                        const alpha = (1 - dist / maxConnectDistance) * (isLight ? 0.22 : 0.18);
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${alpha})`;
+                        ctx.strokeStyle = isLight ? `rgba(100, 116, 139, ${alpha})` : `rgba(148, 163, 184, ${alpha})`;
                         ctx.lineWidth = 0.75;
                         ctx.stroke();
                     }
@@ -292,7 +353,7 @@
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = `rgba(34, 211, 238, ${malpha})`;
+                        ctx.strokeStyle = isLight ? `rgba(2, 132, 199, ${malpha})` : `rgba(34, 211, 238, ${malpha})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
@@ -1269,6 +1330,7 @@
     // 12. INITIALIZATION ON DOM READY
     // ====================================================================
     document.addEventListener('DOMContentLoaded', function () {
+        initTheme();
         initIntroLoader();
         initHeroParticles();
         initHireMeButton();
